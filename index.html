@@ -97,6 +97,9 @@
 
   <link rel="icon" href="assets/logo.png" />
 
+<link rel="preload" href="assets/silentinjury.mp3" as="audio" type="audio/mpeg" />
+<link rel="preload" href="assets/PARALLEL720.mp4" as="video" type="video/mp4" />
+
   <style>
     :root{
   --bg:#0b0c10;
@@ -476,7 +479,7 @@ img,svg,video{max-width:100%; height:auto}
 </svg>
 
 <!-- Audio track: "Silent Injury" (assets/silentinjury.*) -->
-<audio id="epk-audio" preload="metadata">
+<audio id="epk-audio" preload="auto">
   <source src="assets/silentinjury.mp3" type="audio/mpeg">
   <source src="assets/silentinjury.ogg" type="audio/ogg">
 </audio>
@@ -685,7 +688,7 @@ img,svg,video{max-width:100%; height:auto}
       <h2>Visualizer — Parallel Heights</h2>
 
       <div class="video" aria-label="Visualizer Parallel Heights" style="margin-top:10px">
-        <video controls playsinline preload="metadata">
+        <video id="visualizer-video" controls playsinline preload="auto">
           <source src="assets/PARALLEL720.mp4" type="video/mp4">
           <source src="assets/PARALLEL720.webm" type="video/webm">
           Votre navigateur ne supporte pas la vidéo HTML5.
@@ -892,6 +895,7 @@ img,svg,video{max-width:100%; height:auto}
 <script>
   (function(){
     const audio = document.getElementById("epk-audio");
+    const visualizerVideo = document.getElementById("visualizer-video");
     const btn = document.getElementById("player-toggle");
     const bar = document.querySelector(".player-bar");
     const fill = document.getElementById("player-fill");
@@ -899,6 +903,18 @@ img,svg,video{max-width:100%; height:auto}
     if(!audio || !btn || !bar || !fill || !time) return;
 
     audio.volume = 0.75;
+
+    // Warm up media to reduce first-play latency on the visualizer and audio track
+    const warmupMedia = () => {
+      try { audio.load(); } catch(_) {}
+      if(visualizerVideo){
+        visualizerVideo.preload = "auto";
+        try { visualizerVideo.load(); } catch(_) {}
+      }
+    };
+
+    if(document.readyState === "complete") warmupMedia();
+    else window.addEventListener("load", warmupMedia, { once:true });
 
     const fmt = (s) => {
       if(!isFinite(s)) return "0:00";
