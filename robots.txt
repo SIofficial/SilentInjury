@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://thvermot-wq.github.io/SILENT-MINISITE/sitemap.xml
+Sitemap: https://siofficial.github.io/SilentInjury/sitemap.xml
