@@ -211,7 +211,7 @@
 
     /* === Campaign sigil (SI) === */
     .campaign-sigil{
-      display:none;               /* mobile: hidden */
+      display:none;
       align-items:center;
       justify-content:center;
       width: 34px;
@@ -224,7 +224,7 @@
       font-weight: 600;
       font-size: .78rem;
       letter-spacing: .18em;
-      text-indent: .18em;        /* compense le tracking sur 2 lettres */
+      text-indent: .18em;
       user-select:none;
 
       opacity: 0;
@@ -276,6 +276,40 @@
       display:flex;
       align-items:center;
       gap:.7rem;
+    }
+
+    /* === HEADER SOCIAL ICONS === */
+    .header-social{
+      display:flex;
+      align-items:center;
+      gap:.55rem;
+    }
+
+    .social-icon{
+      width:44px;
+      height:44px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background: rgba(0,0,0,.18);
+      color: rgba(244,242,238,.88);
+      text-decoration:none;
+      transition: transform .18s ease, border-color .18s ease, background-color .18s ease, color .18s ease;
+    }
+
+    .social-icon svg{
+      width:18px;
+      height:18px;
+      fill: currentColor;
+    }
+
+    .social-icon:hover{
+      transform: translateY(-1px);
+      border-color: rgba(255,172,31,.55);
+      background: rgba(255,172,31,.06);
+      color: rgba(255,172,31,.92);
     }
 
     .menu-button,
@@ -335,6 +369,20 @@
     }
     .site-header.is-scrolled .brand__sub{
       opacity:.75;
+    }
+
+    /* resserre un peu les icônes au scroll */
+    .site-header.is-scrolled .social-icon{
+      width:40px;
+      height:40px;
+    }
+    .site-header.is-scrolled .social-icon svg{
+      width:17px;
+      height:17px;
+    }
+
+    @media (max-width: 420px){
+      .social-icon{ width:40px; height:40px; }
     }
 
     /* Menu overlay (mobile) */
@@ -919,7 +967,7 @@
         </span>
       </a>
 
-      <!-- NEW: campaign sigil (desktop, visible on scroll) -->
+      <!-- campaign sigil (desktop, visible on scroll) -->
       <span class="campaign-sigil" aria-label="Sigil Silent Injury">SI</span>
 
       <nav class="header-nav" aria-label="Navigation principale">
@@ -932,6 +980,21 @@
       </nav>
 
       <div class="header-actions">
+        <!-- NEW: social icons -->
+        <div class="header-social" aria-label="Réseaux sociaux">
+          <a class="social-icon" href="https://www.instagram.com/silentinjury_band/" target="_blank" rel="noopener" aria-label="Silent Injury sur Instagram">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9A3.5 3.5 0 0 0 20 16.5v-9A3.5 3.5 0 0 0 16.5 4h-9Zm10.25 1.75a1 1 0 1 1 0 2 1 1 0 0 1 0-2ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z"/>
+            </svg>
+          </a>
+
+          <a class="social-icon" href="https://www.facebook.com/profile.php?id=61552999371364" target="_blank" rel="noopener" aria-label="Silent Injury sur Facebook">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M13.5 22v-8h2.7l.4-3h-3.1V9.1c0-.9.3-1.6 1.7-1.6h1.5V4.8c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3V11H7.6v3H10v8h3.5Z"/>
+            </svg>
+          </a>
+        </div>
+
         <a class="header-cta" href="mailto:silentinjuryofficiel@gmail.com?subject=Booking%20Silent%20Injury">Book</a>
 
         <button class="menu-button" id="menuButton" type="button" aria-expanded="false" aria-controls="menuOverlay" aria-label="Ouvrir le menu">
