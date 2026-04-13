@@ -174,6 +174,7 @@
       align-items:center;
       justify-content:space-between;
       gap:1rem;
+      transition: min-height .22s ease;
     }
 
     .brand{
@@ -189,6 +190,7 @@
       object-fit:contain;
       opacity:.92;
       filter: drop-shadow(0 0 14px rgba(255,255,255,.10));
+      transition: width .22s ease, height .22s ease, opacity .22s ease;
     }
 
     .brand__meta{display:grid;gap:.08rem}
@@ -204,6 +206,34 @@
       letter-spacing:.18em;
       text-transform:uppercase;
       color:var(--muted-2);
+      transition: opacity .22s ease;
+    }
+
+    /* === Campaign sigil (SI) === */
+    .campaign-sigil{
+      display:none;               /* mobile: hidden */
+      align-items:center;
+      justify-content:center;
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,172,31,.55);
+      background: rgba(255,172,31,.06);
+      color: rgba(255,172,31,.92);
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: .78rem;
+      letter-spacing: .18em;
+      text-indent: .18em;        /* compense le tracking sur 2 lettres */
+      user-select:none;
+
+      opacity: 0;
+      transform: translateY(-2px);
+      transition: opacity .22s ease, transform .22s ease;
+    }
+
+    @media (min-width: 900px){
+      .campaign-sigil{ display:inline-flex; }
     }
 
     /* nav inline (desktop) */
@@ -288,6 +318,23 @@
     @media (min-width: 900px){
       .header-nav{display:flex;}
       .menu-button{display:none;}
+    }
+
+    /* === Campaign mode: shrink + show SI sigil on scroll === */
+    .site-header.is-scrolled .site-header__inner{
+      min-height: 62px;
+    }
+    .site-header.is-scrolled .campaign-sigil{
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .site-header.is-scrolled .brand img{
+      width:32px;
+      height:32px;
+      opacity:.88;
+    }
+    .site-header.is-scrolled .brand__sub{
+      opacity:.75;
     }
 
     /* Menu overlay (mobile) */
@@ -871,6 +918,9 @@
           <span class="brand__sub">Metalcore · France</span>
         </span>
       </a>
+
+      <!-- NEW: campaign sigil (desktop, visible on scroll) -->
+      <span class="campaign-sigil" aria-label="Sigil Silent Injury">SI</span>
 
       <nav class="header-nav" aria-label="Navigation principale">
         <a href="#release">Release</a>
