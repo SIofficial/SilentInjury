@@ -3,28 +3,27 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Silent Injury | Home Page</title>
-  <meta name="description" content="Silent Injury Homepage — official home page: music, videos, live dates, press kit, tech rider and contact." />
-  <meta name="theme-color" content="#060608" />
+
+  <title>Silent Injury — Life And Loss (New Single)</title>
+  <meta name="description" content="Silent Injury — Life And Loss. New single: April 24, 2026. Official links, videos, live, press kit, tech rider and contact." />
+  <meta name="theme-color" content="#050507" />
   <link rel="canonical" href="https://siofficial.github.io/SilentInjury/" />
-  <link rel="alternate" hreflang="fr" href="https://siofficial.github.io/SilentInjury/" />
-  <link rel="alternate" hreflang="en" href="https://siofficial.github.io/SilentInjury/en/" />
   <meta name="robots" content="index,follow,max-image-preview:large" />
 
   <meta property="og:site_name" content="Silent Injury" />
   <meta property="og:locale" content="fr_FR" />
-  <meta property="og:title" content="Silent Injury | Home Page" />
-  <meta property="og:description" content="Silent Injury Homepage: official music, video, live, press, tech and contact." />
+  <meta property="og:title" content="Silent Injury — Life And Loss (New Single)" />
+  <meta property="og:description" content="Life And Loss — new single (April 24, 2026). Official links, videos, live, press kit, tech rider and contact." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://siofficial.github.io/SilentInjury/" />
   <meta property="og:image" content="https://siofficial.github.io/SilentInjury/assets/og-cover.jpg" />
-  <meta property="og:image:alt" content="Silent Injury — EPK / Booking" />
+  <meta property="og:image:alt" content="Silent Injury — Life And Loss" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Silent Injury | Home Page" />
-  <meta name="twitter:description" content="Silent Injury Homepage: official music, video, live, press, tech and contact." />
+  <meta name="twitter:title" content="Silent Injury — Life And Loss (New Single)" />
+  <meta name="twitter:description" content="Life And Loss — new single (April 24, 2026). Official links, videos, live, press kit, tech rider and contact." />
   <meta name="twitter:image" content="https://siofficial.github.io/SilentInjury/assets/og-cover.jpg" />
 
   <script type="application/ld+json">
@@ -35,8 +34,7 @@
         "@type": "WebSite",
         "@id": "https://siofficial.github.io/SilentInjury/#website",
         "url": "https://siofficial.github.io/SilentInjury/",
-        "name": "Silent Injury | Home Page",
-        "alternateName": "Silent Injury Homepage"
+        "name": "Silent Injury — Life And Loss"
       },
       {
         "@type": "MusicGroup",
@@ -52,7 +50,15 @@
           "https://www.instagram.com/silentinjury_band/",
           "https://www.facebook.com/profile.php?id=61552999371364"
         ],
-        "description": "Metalcore (FR). EPK / Booking : liens, live, presse, tech, contact."
+        "description": "Metalcore (FR). Official links, live, press, tech, contact."
+      },
+      {
+        "@type": "MusicRecording",
+        "@id": "https://siofficial.github.io/SilentInjury/#track-life-and-loss",
+        "name": "Life And Loss",
+        "byArtist": { "@id": "https://siofficial.github.io/SilentInjury/#musicgroup" },
+        "datePublished": "2026-04-24",
+        "url": "https://siofficial.github.io/SilentInjury/#top"
       }
     ]
   }
@@ -62,811 +68,781 @@
 
   <style>
     /* Ajoute manuellement le fichier assets/fonts/Omicron.ttf dans le repo pour activer le titre du hero. */
-    @font-face {
-      font-family: "Omicron";
+    @font-face{
+      font-family:"Omicron";
       src: local("Omicron"), url("assets/fonts/Omicron.ttf") format("truetype");
       font-display: swap;
     }
 
-    :root {
-      --bg: #060608;
-      --bg-deep: #0b0b0f;
-      --panel: #111217;
-      --panel-soft: #181a21;
-      --line: rgba(255,255,255,.12);
-      --line-strong: rgba(255,255,255,.2);
-      --text: #f5f7fb;
-      --muted: #b6bcc9;
-      --muted-2: #8d94a3;
-      --accent: #cf1028;
-      --accent-soft: rgba(207,16,40,.18);
-      --max: 1240px;
-      --radius: 22px;
-      --shadow: 0 24px 70px rgba(0,0,0,.38);
+    :root{
+      --bg:#050507;
+      --bg-deep:#07070a;
+
+      --text:#f4f2ee;
+      --muted:#c7c0b1;
+      --muted-2:#a79f8f;
+
+      /* Accent “doré” (prestige / campagne) */
+      --accent:#ffac1f;
+      --accent-soft: rgba(255,172,31,.16);
+
+      --line: rgba(244,242,238,.14);
+      --line-strong: rgba(244,242,238,.22);
+
+      --max: 1120px;
+      --radius: 18px;
+      --shadow: 0 18px 50px rgba(0,0,0,.22);
+
+      --font-sans: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --font-display: "Omicron","Cinzel","Cormorant Garamond","Georgia",serif;
     }
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      color: var(--text);
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      color:var(--text);
       background:
-        radial-gradient(circle at top left, rgba(207,16,40,.08), transparent 28%),
-        linear-gradient(180deg, #050507 0%, #0a0a0e 60%, #050507 100%);
-      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      line-height: 1.45;
-      overflow-x: hidden;
+        radial-gradient(circle at 30% 10%, rgba(255,172,31,.09), transparent 35%),
+        radial-gradient(circle at 70% 22%, rgba(255,255,255,.04), transparent 40%),
+        linear-gradient(180deg, #040406 0%, var(--bg) 55%, #040406 100%);
+      font-family: var(--font-sans);
+      line-height:1.5;
+      overflow-x:hidden;
     }
 
-    body.menu-open { overflow: hidden; }
-    img { display: block; max-width: 100%; }
-    a { color: inherit; }
-    button, input, textarea { font: inherit; }
-    :focus-visible { outline: 2px solid #fff; outline-offset: 4px; }
+    body.menu-open{overflow:hidden}
+    img{display:block;max-width:100%}
+    a{color:inherit}
+    button,input,textarea{font:inherit}
+    :focus-visible{outline:2px solid #fff;outline-offset:4px}
 
-    .container {
+    .container{
       width: min(100% - 2rem, var(--max));
-      margin-inline: auto;
+      margin-inline:auto;
     }
 
-    .site-header {
-      position: fixed;
-      inset: 0 0 auto 0;
-      z-index: 50;
-      border-bottom: 1px solid transparent;
+    /* Header */
+    .site-header{
+      position:fixed;
+      inset:0 0 auto 0;
+      z-index:50;
+      border-bottom:1px solid transparent;
       transition: background-color .25s ease, border-color .25s ease, backdrop-filter .25s ease;
     }
 
-    .site-header.is-scrolled {
-      background: rgba(5,5,7,.84);
+    .site-header.is-scrolled{
+      background: rgba(5,5,7,.74);
       border-color: var(--line);
       backdrop-filter: blur(14px);
     }
 
-    .site-header__inner {
-      min-height: 78px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
+    .site-header__inner{
+      min-height:78px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:1rem;
     }
 
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: .85rem;
-      text-decoration: none;
-      min-width: 0;
+    .brand{
+      display:inline-flex;
+      align-items:center;
+      gap:.85rem;
+      text-decoration:none;
+      min-width:0;
     }
 
-    .brand img {
-      width: 38px;
-      height: 38px;
-      object-fit: contain;
-      opacity: .92;
-      filter: drop-shadow(0 0 14px rgba(255,255,255,.12));
+    .brand img{
+      width:38px;height:38px;
+      object-fit:contain;
+      opacity:.92;
+      filter: drop-shadow(0 0 14px rgba(255,255,255,.10));
     }
 
-    .brand__meta {
-      display: grid;
-      gap: .08rem;
+    .brand__meta{display:grid;gap:.08rem}
+    .brand__title{
+      font-size:.9rem;
+      font-weight:700;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      white-space:nowrap;
+    }
+    .brand__sub{
+      font-size:.68rem;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color:var(--muted-2);
     }
 
-    .brand__title {
-      font-size: .9rem;
-      font-weight: 700;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      white-space: nowrap;
-    }
-
-    .brand__sub {
-      font-size: .68rem;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      color: var(--muted-2);
-    }
-
-    /* NEW: nav visible en desktop */
+    /* NEW: nav inline (desktop) */
     .header-nav{
-      display:none;                 /* caché sur mobile */
+      display:none;
       align-items:center;
       justify-content:center;
-      gap:.35rem;
+      gap:.85rem;
       flex: 1 1 auto;
-      min-width: 0;
-      padding: 0 .25rem;
+      min-width:0;
+      padding:0 .25rem;
     }
 
     .header-nav a{
       text-decoration:none;
       font-size:.72rem;
-      letter-spacing:.14em;
+      letter-spacing:.22em;
       text-transform:uppercase;
-      color: var(--muted-2);
-      padding:.55rem .7rem;
-      border-radius:999px;
-      border:1px solid transparent;
+      color:var(--muted-2);
+      padding:.35rem .2rem;
+      border:none;
+      background:transparent;
       white-space:nowrap;
     }
 
     .header-nav a:hover{
-      color: var(--text);
-      background: rgba(255,255,255,.05);
-      border-color: rgba(255,255,255,.12);
+      color:var(--text);
+      text-decoration:underline;
+      text-decoration-thickness:1px;
+      text-underline-offset:6px;
+      text-decoration-color: rgba(255,172,31,.65);
     }
 
     .header-nav a.is-cta{
-      color: var(--text);
-      border-color: var(--line);
-      background: rgba(255,255,255,.04);
+      color:var(--accent);
+      text-decoration:none;
     }
 
-    .header-actions {
-      display: flex;
-      align-items: center;
-      gap: .7rem;
+    .header-actions{
+      display:flex;
+      align-items:center;
+      gap:.7rem;
     }
 
-    .lang-link,
     .menu-button,
-    .header-cta {
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,.04);
-      color: var(--text);
-      min-height: 44px;
-      padding: 0 .95rem;
-      border-radius: 999px;
-      text-decoration: none;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      font-size: .74rem;
-      font-weight: 700;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: .55rem;
-      cursor: pointer;
+    .header-cta{
+      border:1px solid var(--line);
+      background: rgba(0,0,0,.18);
+      color:var(--text);
+      min-height:44px;
+      padding:0 .95rem;
+      border-radius:999px;
+      text-decoration:none;
+      letter-spacing:.22em;
+      text-transform:uppercase;
+      font-size:.72rem;
+      font-weight:800;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:.55rem;
+      cursor:pointer;
     }
 
-    .menu-button__bars {
-      display: inline-grid;
-      gap: 4px;
+    .header-cta{
+      border-color: rgba(255,172,31,.45);
+      background: rgba(255,172,31,.06);
+      color: var(--accent);
+    }
+    .header-cta:hover{background: rgba(255,172,31,.12)}
+
+    .menu-button__bars{
+      display:inline-grid;
+      gap:4px;
+    }
+    .menu-button__bars span{
+      width:16px;height:1px;
+      background:currentColor;
+      display:block;
     }
 
-    .menu-button__bars span {
-      width: 16px;
-      height: 1px;
-      background: currentColor;
-      display: block;
-    }
-
-    /* Desktop: on montre la nav inline, et on masque le bouton Menu */
     @media (min-width: 900px){
-      .header-nav{ display:flex; }
-      .menu-button{ display:none; }
+      .header-nav{display:flex;}
+      .menu-button{display:none;}
     }
 
-    .menu-overlay {
-      position: fixed;
-      inset: 0;
-      z-index: 60;
+    /* Menu overlay (mobile) */
+    .menu-overlay{
+      position:fixed;
+      inset:0;
+      z-index:60;
       background:
         linear-gradient(180deg, rgba(7,7,9,.96), rgba(7,7,9,.985)),
         url('assets/gallery/09-silent-injury-live-scene-public-coulisses-noir-blanc.webp') center/cover no-repeat;
-      display: grid;
-      align-items: end;
+      display:grid;
+      align-items:end;
       padding: clamp(6rem, 8vw, 7.5rem) 1.25rem 2rem;
-      opacity: 0;
-      visibility: hidden;
-      pointer-events: none;
+      opacity:0;
+      visibility:hidden;
+      pointer-events:none;
       transition: opacity .24s ease, visibility .24s ease;
     }
 
-    .menu-overlay::before {
-      content: "";
-      position: absolute;
-      inset: 0;
+    .menu-overlay::before{
+      content:"";
+      position:absolute;
+      inset:0;
       background: linear-gradient(180deg, rgba(0,0,0,.62), rgba(0,0,0,.9));
     }
 
-    .menu-overlay.is-open {
-      opacity: 1;
-      visibility: visible;
-      pointer-events: auto;
+    .menu-overlay.is-open{
+      opacity:1;
+      visibility:visible;
+      pointer-events:auto;
     }
 
-    .menu-overlay__inner {
-      position: relative;
-      z-index: 1;
+    .menu-overlay__inner{
+      position:relative;
+      z-index:1;
       width: min(100%, 1240px);
-      margin-inline: auto;
-      display: grid;
-      gap: 2rem;
+      margin-inline:auto;
+      display:grid;
+      gap:2rem;
     }
 
-    .menu-overlay__top {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1rem;
+    .menu-overlay__top{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:1rem;
     }
 
-    .menu-label {
-      font-size: .74rem;
-      letter-spacing: .2em;
-      text-transform: uppercase;
-      color: var(--muted);
+    .menu-label{
+      font-size:.74rem;
+      letter-spacing:.2em;
+      text-transform:uppercase;
+      color:var(--muted);
     }
 
-    .menu-close {
-      border: 1px solid var(--line);
-      background: transparent;
-      color: var(--text);
-      width: 44px;
-      height: 44px;
-      border-radius: 999px;
-      cursor: pointer;
-      font-size: 1rem;
+    .menu-close{
+      border:1px solid var(--line);
+      background:transparent;
+      color:var(--text);
+      width:44px;height:44px;
+      border-radius:999px;
+      cursor:pointer;
+      font-size:1rem;
     }
 
-    .menu-nav {
-      display: grid;
-      gap: .35rem;
-      padding-bottom: 1rem;
+    .menu-nav{
+      display:grid;
+      gap:.35rem;
+      padding-bottom:1rem;
     }
 
-    .menu-nav a {
-      text-decoration: none;
+    .menu-nav a{
+      text-decoration:none;
       font-size: clamp(1.8rem, 4vw, 3.4rem);
-      font-weight: 800;
-      line-height: .98;
-      letter-spacing: .03em;
-      text-transform: uppercase;
-      padding: .3rem 0;
-      width: fit-content;
+      font-weight:800;
+      line-height:.98;
+      letter-spacing:.03em;
+      text-transform:uppercase;
+      padding:.3rem 0;
+      width:fit-content;
     }
 
-    .menu-nav a:hover { color: #ffffff; }
+    .menu-nav a:hover{color:#fff}
 
-    .menu-overlay__footer {
-      display: flex;
-      justify-content: space-between;
-      gap: 1rem;
-      flex-wrap: wrap;
-      align-items: center;
-      color: var(--muted);
-      border-top: 1px solid var(--line);
-      padding-top: 1rem;
+    .menu-overlay__footer{
+      display:flex;
+      justify-content:space-between;
+      gap:1rem;
+      flex-wrap:wrap;
+      align-items:center;
+      color:var(--muted);
+      border-top:1px solid var(--line);
+      padding-top:1rem;
     }
 
-    .hero {
-      position: relative;
-      min-height: 100svh;
-      display: grid;
-      align-items: end;
-      overflow: clip;
+    /* Hero “Sleep Token-ish” */
+    .hero{
+      position:relative;
+      min-height:100svh;
+      display:grid;
+      place-items:center;
+      text-align:center;
+      overflow:clip;
+
+      /* IMPORTANT: fournis assets/life-and-loss-hero.webp ou .jpg */
       background:
         linear-gradient(180deg, rgba(0,0,0,.25), rgba(0,0,0,.88)),
-        linear-gradient(90deg, rgba(0,0,0,.72) 0%, rgba(0,0,0,.55) 34%, rgba(0,0,0,.12) 100%),
-        url('assets/gallery/15-silent-injury-live-arthur-delorme-thibault-vermot-vincent-louvel-groupe-noir-blanc.webp') center top / cover no-repeat;
+        image-set(
+          url("assets/life-and-loss-hero.webp") type("image/webp") 1x,
+          url("assets/life-and-loss-hero.jpg") type("image/jpeg") 1x
+        );
+      background-position:center;
+      background-size:cover;
+      background-repeat:no-repeat;
     }
 
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
       background:
-        radial-gradient(circle at 16% 15%, rgba(207,16,40,.33), transparent 32%),
-        linear-gradient(180deg, rgba(0,0,0,.14), rgba(0,0,0,.36));
-      pointer-events: none;
+        radial-gradient(circle at 50% 20%, rgba(255,172,31,.16), transparent 35%),
+        linear-gradient(180deg, rgba(0,0,0,.05), rgba(0,0,0,.35));
+      pointer-events:none;
     }
 
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: auto 0 0 0;
-      height: 140px;
-      background: linear-gradient(180deg, transparent, #050507 85%);
-      pointer-events: none;
+    .hero::after{
+      content:"";
+      position:absolute;
+      inset:auto 0 0 0;
+      height:140px;
+      background: linear-gradient(180deg, transparent, #040406 85%);
+      pointer-events:none;
     }
 
-    .hero__watermark {
-      position: absolute;
+    .hero__watermark{
+      position:absolute;
       right: min(4vw, 3rem);
       top: 18vh;
       width: min(46vw, 520px);
-      opacity: .09;
-      filter: drop-shadow(0 0 25px rgba(255,255,255,.08));
-      pointer-events: none;
+      opacity:.08;
+      filter: drop-shadow(0 0 25px rgba(255,255,255,.06));
+      pointer-events:none;
     }
 
-    .hero__inner {
-      position: relative;
-      z-index: 1;
-      padding: 8.2rem 0 3rem;
-      min-height: 100svh;
-      display: flex;
-      align-items: end;
+    .hero__inner{
+      position:relative;
+      z-index:1;
+      padding: 8.5rem 0 4.2rem;
+      min-height:100svh;
+      display:grid;
+      place-items:center;
     }
 
-    .hero__content {
-      width: min(100%, 780px);
-      padding-bottom: clamp(1rem, 4vw, 3rem);
+    .hero__content{
+      width:min(100%, 780px);
     }
 
-    .eyebrow {
-      margin: 0 0 1rem;
-      font-size: .72rem;
-      letter-spacing: .22em;
-      text-transform: uppercase;
-      color: #e8ebf2;
-      font-weight: 700;
+    .eyebrow{
+      margin:0 0 1.1rem;
+      font-size:.72rem;
+      letter-spacing:.28em;
+      text-transform:uppercase;
+      color: rgba(244,242,238,.92);
+      font-weight:700;
     }
 
-    .hero__title {
-      margin: 0;
-      font-family: "Omicron", "Orbitron", Inter, sans-serif;
-      font-size: clamp(3rem, 11vw, 8rem);
-      line-height: .88;
-      font-weight: 400;
-      letter-spacing: .08em;
-      text-transform: lowercase;
-      text-wrap: balance;
-      text-shadow: 0 0 28px rgba(255,255,255,.06);
+    .hero__title{
+      margin:0;
+      font-family: var(--font-display);
+      font-size: clamp(3.1rem, 10.2vw, 7.6rem);
+      line-height:.9;
+      font-weight:500;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+      text-wrap:balance;
+      text-shadow: 0 0 28px rgba(255,255,255,.04);
     }
 
-    .hero__dek {
-      max-width: 36ch;
-      margin: 1.1rem 0 0;
-      font-size: clamp(1.02rem, 2.2vw, 1.32rem);
-      color: #edf0f6;
+    .hero__announce{
+      margin: 1.15rem 0 0;
+      font-size:.86rem;
+      letter-spacing:.26em;
+      text-transform:uppercase;
+      color: rgba(244,242,238,.92);
+      font-weight:700;
     }
 
-    .hero__meta {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-      align-items: center;
+    .hero__subannounce{
+      margin:.6rem 0 0;
+      font-size:.8rem;
+      letter-spacing:.22em;
+      text-transform:uppercase;
+      color: var(--muted);
+    }
+
+    .hero__meta{
+      display:flex;
+      justify-content:center;
+      gap:1rem;
+      flex-wrap:wrap;
+      align-items:center;
       margin: 1.6rem 0 0;
       color: var(--muted);
-      font-size: .82rem;
-      letter-spacing: .12em;
+      font-size: .78rem;
+      letter-spacing: .18em;
       text-transform: uppercase;
     }
 
-    .cta-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: .85rem;
-      margin-top: 1.6rem;
+    .cta-row{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:.85rem;
+      margin-top: 1.9rem;
     }
 
-    .cta {
-      min-height: 48px;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      padding: .82rem 1.25rem;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: .55rem;
-      text-decoration: none;
-      font-weight: 800;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      font-size: .76rem;
-      background: rgba(255,255,255,.04);
+    .cta{
+      min-height:46px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      padding: .78rem 1.1rem;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:.55rem;
+      text-decoration:none;
+      font-weight:800;
+      letter-spacing:.22em;
+      text-transform:uppercase;
+      font-size:.72rem;
+      background: rgba(0,0,0,.18);
       transition: transform .18s ease, background-color .18s ease, border-color .18s ease;
+      cursor:pointer;
     }
 
-    .cta:hover { transform: translateY(-1px); }
-
-    .cta--primary {
+    .cta:hover{transform: translateY(-1px)}
+    .cta--primary{
       background: var(--accent);
       border-color: var(--accent);
-      color: #fff;
-      box-shadow: 0 14px 40px rgba(207,16,40,.34);
+      color:#101014;
+      box-shadow: 0 18px 60px rgba(255,172,31,.14);
+    }
+    .cta--ghost{
+      background: transparent;
+      border-color: rgba(244,242,238,.28);
     }
 
-    .cta--ghost {
-      background: rgba(0,0,0,.22);
-      border-color: rgba(255,255,255,.24);
-    }
+    .scroll-anchor{scroll-margin-top:94px}
 
-    .scroll-anchor {
-      scroll-margin-top: 94px;
-    }
-
-    .section {
-      position: relative;
+    /* Sections */
+    .section{
+      position:relative;
       padding: clamp(3.2rem, 7vw, 6rem) 0;
     }
+    .section + .section{border-top:1px solid var(--line)}
 
-    .section + .section { border-top: 1px solid var(--line); }
-
-    .section-heading {
-      display: grid;
-      gap: .8rem;
-      margin-bottom: 1.6rem;
+    .section-heading{
+      display:grid;
+      gap:.8rem;
+      margin-bottom:1.6rem;
     }
 
-    .section-kicker {
-      font-size: .72rem;
-      letter-spacing: .24em;
-      text-transform: uppercase;
+    .section-kicker{
+      font-size:.72rem;
+      letter-spacing:.24em;
+      text-transform:uppercase;
       color: var(--muted-2);
-      font-weight: 700;
-      margin: 0;
+      font-weight:700;
+      margin:0;
     }
 
-    .section-title {
-      margin: 0;
+    .section-title{
+      margin:0;
       font-size: clamp(1.7rem, 4vw, 3.15rem);
-      line-height: .95;
-      text-transform: uppercase;
-      letter-spacing: .03em;
+      line-height:.95;
+      text-transform:uppercase;
+      letter-spacing:.03em;
     }
 
-    .section-intro {
-      margin: 0;
-      max-width: 48ch;
-      color: var(--muted);
-      font-size: 1rem;
-    }
-
-    .feature {
-      display: grid;
-      gap: 1.4rem;
-      align-items: stretch;
-    }
-
+    /* “Dé-UI-iser” les cartes */
     .feature__media,
     .feature__copy,
     .panel,
     .tour-board,
     .video-card,
     .gallery-card,
-    .contact-card {
-      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.025));
-      border: 1px solid var(--line);
+    .contact-card{
+      background: rgba(0,0,0,.18);
+      border: 1px solid rgba(244,242,238,.12);
       border-radius: var(--radius);
-      box-shadow: var(--shadow);
+      box-shadow: none;
     }
 
-    .feature__media {
-      overflow: hidden;
-      min-height: 320px;
-    }
-
-    .feature__media img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      aspect-ratio: 1 / 1;
-    }
-
-    .feature__copy {
+    .feature{display:grid;gap:1.4rem;align-items:stretch}
+    .feature__media{overflow:hidden;min-height:320px}
+    .feature__media img{width:100%;height:100%;object-fit:cover;aspect-ratio:1/1}
+    .feature__copy{
       padding: clamp(1.35rem, 3vw, 2rem);
-      display: grid;
-      align-content: center;
-      gap: 1rem;
+      display:grid;
+      align-content:center;
+      gap:1rem;
     }
 
     .feature__eyebrow,
     .panel__eyebrow,
-    .video-card__eyebrow {
-      margin: 0;
-      font-size: .72rem;
-      letter-spacing: .22em;
-      text-transform: uppercase;
+    .video-card__eyebrow{
+      margin:0;
+      font-size:.72rem;
+      letter-spacing:.22em;
+      text-transform:uppercase;
       color: var(--muted-2);
-      font-weight: 700;
+      font-weight:700;
     }
 
-    .feature__title {
-      margin: 0;
+    .feature__title{
+      margin:0;
       font-size: clamp(1.9rem, 4vw, 3.4rem);
-      line-height: .94;
-      text-transform: uppercase;
+      line-height:.94;
+      text-transform:uppercase;
     }
 
     .feature__copy p,
     .panel p,
     .video-card p,
-    .contact-card p {
-      margin: 0;
+    .contact-card p{
+      margin:0;
       color: var(--muted);
     }
 
-    .feature__stats {
-      display: flex;
-      flex-wrap: wrap;
-      gap: .7rem;
-      margin-top: .2rem;
+    .feature__stats{
+      display:flex;
+      flex-wrap:wrap;
+      gap:.7rem;
+      margin-top:.2rem;
     }
 
-    .pill {
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.04);
+    .pill{
+      border-radius:999px;
+      border:1px solid rgba(244,242,238,.18);
+      background: rgba(0,0,0,.18);
       padding: .55rem .85rem;
-      font-size: .75rem;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      color: #eef2fb;
+      font-size:.75rem;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color: #efe9dc;
     }
 
-    .tour-board {
-      position: relative;
-      overflow: hidden;
+    .tour-board{
+      position:relative;
+      overflow:hidden;
       padding: clamp(1.35rem, 3vw, 2rem);
     }
 
-    .tour-board::before {
-      content: "";
-      position: absolute;
-      inset: auto -7% -34% auto;
+    .tour-board::before{
+      content:"";
+      position:absolute;
+      inset:auto -7% -34% auto;
       width: min(48vw, 460px);
-      aspect-ratio: 1;
+      aspect-ratio:1;
       background: url('assets/logo-watermark.png') center/contain no-repeat;
-      opacity: .055;
-      pointer-events: none;
-      filter: drop-shadow(0 0 18px rgba(255,255,255,.08));
+      opacity:.045;
+      pointer-events:none;
+      filter: drop-shadow(0 0 18px rgba(255,255,255,.06));
     }
 
-    .tour-board__grid {
-      position: relative;
-      z-index: 1;
-      display: grid;
-      gap: 1rem;
+    .tour-board__grid{position:relative;z-index:1;display:grid;gap:1rem}
+    .tour-board__headline{display:grid;gap:.5rem;max-width:45rem}
+
+    .tour-list{
+      list-style:none;
+      margin:.2rem 0 0;
+      padding:0;
+      display:grid;
+      gap:.85rem;
     }
 
-    .tour-board__headline {
-      display: grid;
-      gap: .5rem;
-      max-width: 45rem;
-    }
-
-    .tour-list {
-      list-style: none;
-      margin: .2rem 0 0;
-      padding: 0;
-      display: grid;
-      gap: .85rem;
-    }
-
-    .tour-list li {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: .25rem;
+    .tour-list li{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:.25rem;
       padding: 1rem 0;
-      border-top: 1px solid rgba(255,255,255,.1);
+      border-top:1px solid rgba(244,242,238,.10);
+    }
+    .tour-list li:first-child{border-top:0}
+    .tour-list strong{
+      font-size:.86rem;
+      letter-spacing:.16em;
+      text-transform:uppercase;
     }
 
-    .tour-list li:first-child { border-top: 0; }
-
-    .tour-list strong {
-      font-size: .86rem;
-      letter-spacing: .16em;
-      text-transform: uppercase;
-    }
-
-    .tour-list span {
-      color: var(--muted);
-    }
-
-    .cards-4 {
-      display: grid;
-      gap: 1rem;
+    .cards-4{
+      display:grid;
+      gap:1rem;
       grid-template-columns: repeat(1, minmax(0, 1fr));
     }
 
-    .panel {
+    .panel{
       padding: 1.2rem;
-      display: grid;
-      gap: .8rem;
-      min-height: 100%;
+      display:grid;
+      gap:.8rem;
+      min-height:100%;
     }
 
     .panel h3,
-    .contact-card h3 {
-      margin: 0;
-      font-size: 1.1rem;
+    .contact-card h3{
+      margin:0;
+      font-size: 1.05rem;
       text-transform: uppercase;
       letter-spacing: .05em;
     }
 
-    .video-layout {
-      display: grid;
-      gap: 1rem;
-      grid-template-columns: 1fr;
+    .video-layout{
+      display:grid;
+      gap:1rem;
+      grid-template-columns:1fr;
     }
 
-    .video-card {
-      overflow: hidden;
-    }
-
-    .video-card__copy {
+    .video-card{overflow:hidden}
+    .video-card__copy{
       padding: 1rem 1.1rem 1.1rem;
-      display: grid;
-      gap: .7rem;
+      display:grid;
+      gap:.7rem;
     }
 
-    .video-frame {
-      aspect-ratio: 16 / 9;
-      width: 100%;
-      border: 0;
-      display: block;
-      background: #000;
+    .video-frame{
+      aspect-ratio:16/9;
+      width:100%;
+      border:0;
+      display:block;
+      background:#000;
     }
 
-    .gallery-grid {
-      display: grid;
-      gap: 1rem;
+    .gallery-grid{
+      display:grid;
+      gap:1rem;
       grid-template-columns: repeat(1, minmax(0, 1fr));
     }
 
-    .gallery-card {
-      overflow: hidden;
-      min-height: 100%;
-    }
-
-    .gallery-card img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      aspect-ratio: 4 / 3;
+    .gallery-card{overflow:hidden;min-height:100%}
+    .gallery-card img{
+      width:100%;height:100%;
+      object-fit:cover;
+      aspect-ratio:4/3;
       filter: contrast(1.03) brightness(.94);
       transition: transform .35s ease, opacity .25s ease;
-      opacity: 1;
+      opacity:1;
+    }
+    .gallery-card img.is-swapping{opacity:.2}
+    .gallery-card:hover img{transform: scale(1.03)}
+
+    .about-grid{
+      display:grid;
+      gap:1rem;
+      grid-template-columns:1fr;
+      align-items:stretch;
     }
 
-    .gallery-card img.is-swapping {
-      opacity: .2;
+    .about-copy{
+      display:grid;
+      gap:1rem;
+      align-content:start;
     }
 
-    .gallery-card:hover img { transform: scale(1.03); }
-
-    .about-grid {
-      display: grid;
-      gap: 1rem;
-      grid-template-columns: 1fr;
-      align-items: stretch;
-    }
-
-    .about-copy {
-      display: grid;
-      gap: 1rem;
-      align-content: start;
-    }
-
-    .about-copy p {
-      margin: 0;
+    .about-copy p{
+      margin:0;
       color: var(--muted);
-      max-width: 56ch;
+      max-width:56ch;
     }
 
-    .about-metrics {
-      display: grid;
-      gap: .75rem;
+    .about-metrics{
+      display:grid;
+      gap:.75rem;
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    .metric {
-      border: 1px solid var(--line);
+    .metric{
+      border:1px solid rgba(244,242,238,.12);
       border-radius: 18px;
-      background: rgba(255,255,255,.035);
-      padding: 1rem;
+      background: rgba(0,0,0,.18);
+      padding:1rem;
     }
 
-    .metric strong {
-      display: block;
-      font-size: 1.35rem;
-      line-height: 1;
-      margin-bottom: .4rem;
+    .metric strong{
+      display:block;
+      font-size: 1.2rem;
+      line-height:1.1;
+      margin-bottom:.4rem;
+      color:#efe9dc;
     }
 
-    .metric span {
-      color: var(--muted);
-      font-size: .88rem;
-    }
+    .metric span{color: var(--muted); font-size:.88rem}
 
-    .about-photo {
-      overflow: hidden;
+    .about-photo{
+      overflow:hidden;
       border-radius: var(--radius);
-      border: 1px solid var(--line);
-      box-shadow: var(--shadow);
-      min-height: 320px;
+      border: 1px solid rgba(244,242,238,.12);
+      min-height:320px;
     }
 
-    .about-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      aspect-ratio: 1 / 1;
+    .about-photo img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      aspect-ratio:1/1;
     }
 
-    .contact-grid {
-      display: grid;
-      gap: 1rem;
-      grid-template-columns: 1fr;
+    .contact-grid{
+      display:grid;
+      gap:1rem;
+      grid-template-columns:1fr;
     }
 
-    .contact-card {
-      padding: 1.3rem;
-      display: grid;
-      gap: .85rem;
-      align-content: start;
+    .contact-card{
+      padding:1.3rem;
+      display:grid;
+      gap:.85rem;
+      align-content:start;
     }
 
-    .contact-actions {
-      display: flex;
-      gap: .8rem;
-      flex-wrap: wrap;
-      margin-top: .2rem;
+    .contact-actions{
+      display:flex;
+      gap:.8rem;
+      flex-wrap:wrap;
+      margin-top:.2rem;
     }
 
-    .contact-email {
-      word-break: break-word;
-    }
+    .contact-email{word-break:break-word}
 
-    .footer {
-      border-top: 1px solid var(--line);
+    .footer{
+      border-top:1px solid var(--line);
       padding: 1.8rem 0 2.3rem;
       color: var(--muted);
     }
 
-    .footer__row {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
+    .footer__row{
+      display:flex;
+      gap:1rem;
+      flex-wrap:wrap;
+      justify-content:space-between;
+      align-items:center;
     }
 
-    .footer__social {
-      display: flex;
-      gap: .8rem;
-      flex-wrap: wrap;
+    .footer__social{
+      display:flex;
+      gap:.8rem;
+      flex-wrap:wrap;
     }
 
-    .footer__social a {
-      text-decoration: none;
-      font-size: .8rem;
-      letter-spacing: .14em;
-      text-transform: uppercase;
+    .footer__social a{
+      text-decoration:none;
+      font-size:.8rem;
+      letter-spacing:.14em;
+      text-transform:uppercase;
       color: var(--text);
     }
 
-    @media (min-width: 720px) {
-      .cards-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .gallery-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-      .contact-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .about-grid { grid-template-columns: minmax(0, 1.1fr) minmax(360px, .9fr); }
+    @media (min-width: 720px){
+      .cards-4{grid-template-columns: repeat(2, minmax(0, 1fr))}
+      .gallery-grid{grid-template-columns: repeat(3, minmax(0, 1fr))}
+      .contact-grid{grid-template-columns: repeat(2, minmax(0, 1fr))}
+      .about-grid{grid-template-columns: minmax(0, 1.1fr) minmax(360px, .9fr)}
     }
 
-    @media (min-width: 900px) {
-      .feature { grid-template-columns: minmax(320px, .9fr) minmax(0, 1.1fr); }
-      .video-layout { grid-template-columns: minmax(0, 1.4fr) minmax(320px, .8fr); }
-      .tour-list li {
+    @media (min-width: 900px){
+      .feature{grid-template-columns: minmax(320px, .9fr) minmax(0, 1.1fr)}
+      .video-layout{grid-template-columns: minmax(0, 1.4fr) minmax(320px, .8fr)}
+      .tour-list li{
         grid-template-columns: 190px minmax(0, 1fr) auto;
-        align-items: center;
-        gap: 1rem;
+        align-items:center;
+        gap:1rem;
       }
-      .tour-list li a { justify-self: end; }
-      .tour-board__grid { grid-template-columns: minmax(0, 1.3fr) minmax(360px, .9fr); align-items: start; }
+      .tour-list li a{justify-self:end}
+      .tour-board__grid{
+        grid-template-columns: minmax(0, 1.3fr) minmax(360px, .9fr);
+        align-items:start;
+      }
     }
 
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      *, *::before, *::after {
-        animation: none !important;
-        transition: none !important;
-      }
+    @media (prefers-reduced-motion: reduce){
+      html{scroll-behavior:auto}
+      *,*::before,*::after{animation:none !important;transition:none !important}
     }
   </style>
 </head>
+
 <body>
   <header class="site-header" id="siteHeader">
     <div class="container site-header__inner">
@@ -878,7 +854,6 @@
         </span>
       </a>
 
-      <!-- NEW: nav inline (desktop) -->
       <nav class="header-nav" aria-label="Navigation principale">
         <a href="#release">Release</a>
         <a href="#tour">Tour</a>
@@ -889,16 +864,12 @@
       </nav>
 
       <div class="header-actions">
-        <!-- NEW: CTA booking visible -->
         <a class="header-cta" href="mailto:silentinjuryofficiel@gmail.com?subject=Booking%20Silent%20Injury">Book</a>
 
-        <!-- Menu conservé (mobile) -->
         <button class="menu-button" id="menuButton" type="button" aria-expanded="false" aria-controls="menuOverlay" aria-label="Ouvrir le menu">
           Menu
           <span class="menu-button__bars" aria-hidden="true">
-            <span></span>
-            <span></span>
-            <span></span>
+            <span></span><span></span><span></span>
           </span>
         </button>
       </div>
@@ -923,7 +894,7 @@
       </nav>
 
       <div class="menu-overlay__footer">
-        <span>Break The Mirror · official video online</span>
+        <span>Life And Loss · single release: 24.04.2026</span>
         <div class="footer__social" aria-label="Réseaux sociaux">
           <a href="https://www.instagram.com/silentinjury_band/" target="_blank" rel="noopener">Instagram</a>
           <a href="https://www.facebook.com/profile.php?id=61552999371364" target="_blank" rel="noopener">Facebook</a>
@@ -937,18 +908,23 @@
       <img class="hero__watermark" src="assets/logo-watermark.png" alt="" aria-hidden="true" />
       <div class="container hero__inner">
         <div class="hero__content">
-          <p class="eyebrow"></p>
-          <h1 class="hero__title">silent injury</h1>
-          <p class="hero__dek"></p>
+          <p class="eyebrow">Silent Injury</p>
+
+          <h1 class="hero__title">Life And Loss</h1>
+
+          <p class="hero__announce" id="heroAnnounce">THE NEW SINGLE OUT APRIL 24, 2026</p>
+          <p class="hero__subannounce" id="heroSubannounce">FOLLOW / GET NOTIFIED</p>
+
           <div class="hero__meta" aria-label="Informations rapides">
             <span>France</span>
             <span>Metalcore</span>
-            <span>Booking open</span>
+            <span id="heroMetaRelease">Single · 24.04.2026</span>
           </div>
+
           <div class="cta-row">
-            <a class="cta cta--primary" href="https://www.youtube.com/watch?v=wf1ajH-h7EQ" target="_blank" rel="noopener">Video</a>
-            <a class="cta cta--ghost" href="#tour">Live section</a>
-            <a class="cta" href="mailto:silentinjuryofficiel@gmail.com?subject=Booking%20Silent%20Injury">Book</a>
+            <a class="cta cta--primary" id="heroPrimary" href="https://open.spotify.com/intl-fr/artist/3yQp4bKLIEdyO4jA6frSP8" target="_blank" rel="noopener">FOLLOW</a>
+            <a class="cta cta--ghost" id="heroSecondary" href="#">ADD TO CALENDAR</a>
+            <a class="cta" href="#contact">EPK</a>
           </div>
         </div>
       </div>
@@ -1136,8 +1112,8 @@
 
         <div class="about-grid">
           <div class="about-copy">
-            <p>FR | Silent Injury avance sur une ligne à haute tension crépitant d'électricité et de mélodies. Des tracks sans concession ni facilité. Juste une envie de refaire revivre une époque nourrie de toutes leurs influences pour créer leur propre style,en fiers descendants de la mouvance Metal de cette dernière décennie.</p>
-            <p>EN | Silent Injury walks a live wire — equal parts voltage and melody. No concessions. No shortcuts. Just one drive: revive the 2000s spirit through everything they’ve absorbed, and turn it into their own signature — straight out of the last decade’s metal lineage.</p>
+            <p>Silent Injury avance sur une ligne à haute tension crépitant d'électricité et de mélodies. Des tracks sans concession ni facilité. Juste une envie de refaire revivre une époque nourrie de toutes leurs influences pour créer leur propre style,en fiers descendants de la mouvance Metal de cette dernière décennie.</p>
+            <p>Silent Injury walks a live wire — equal parts voltage and melody. No concessions. No shortcuts. Just one drive: revive the 2000s spirit through everything they’ve absorbed, and turn it into their own signature — straight out of the last decade’s metal lineage.</p>
 
             <div class="about-metrics" aria-label="Repères du groupe">
               <div class="metric">
@@ -1153,8 +1129,8 @@
                 <span>New set incoming!</span>
               </div>
               <div class="metric">
-                <strong>Video</strong>
-                <span>New clip incoming!</span>
+                <strong>Life And Loss</strong>
+                <span>Single · 24.04.2026</span>
               </div>
             </div>
 
@@ -1215,53 +1191,154 @@
   </footer>
 
   <script>
+    // Header + menu overlay (mobile)
     const header = document.getElementById('siteHeader');
     const menuButton = document.getElementById('menuButton');
     const menuClose = document.getElementById('menuClose');
     const menuOverlay = document.getElementById('menuOverlay');
 
-    function syncHeader() {
+    function syncHeader(){
       header.classList.toggle('is-scrolled', window.scrollY > 24);
     }
 
-    function openMenu() {
+    function openMenu(){
       menuOverlay.classList.add('is-open');
       menuOverlay.setAttribute('aria-hidden', 'false');
       menuButton.setAttribute('aria-expanded', 'true');
       document.body.classList.add('menu-open');
     }
 
-    function closeMenu() {
+    function closeMenu(){
       menuOverlay.classList.remove('is-open');
       menuOverlay.setAttribute('aria-hidden', 'true');
       menuButton.setAttribute('aria-expanded', 'false');
       document.body.classList.remove('menu-open');
     }
 
-    menuButton.addEventListener('click', () => {
-      const isOpen = menuOverlay.classList.contains('is-open');
-      if (isOpen) {
-        closeMenu();
-      } else {
-        openMenu();
-      }
-    });
+    if (menuButton) {
+      menuButton.addEventListener('click', () => {
+        const isOpen = menuOverlay.classList.contains('is-open');
+        if (isOpen) closeMenu();
+        else openMenu();
+      });
+    }
 
-    menuClose.addEventListener('click', closeMenu);
+    if (menuClose) menuClose.addEventListener('click', closeMenu);
 
-    menuOverlay.querySelectorAll('a').forEach((link) => {
-      link.addEventListener('click', closeMenu);
-    });
+    if (menuOverlay) {
+      menuOverlay.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', closeMenu);
+      });
+    }
 
     window.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape' && menuOverlay.classList.contains('is-open')) {
-        closeMenu();
-      }
+      if (event.key === 'Escape' && menuOverlay.classList.contains('is-open')) closeMenu();
     });
 
     window.addEventListener('scroll', syncHeader, { passive: true });
     syncHeader();
 
+    // Hero state (before/after single release date)
+    (function heroReleaseState(){
+      const RELEASE_ISO = "2026-04-24T00:00:00+02:00"; // Europe/Paris
+      const releaseDate = new Date(RELEASE_ISO);
+      const now = new Date();
+
+      const heroAnnounce = document.getElementById('heroAnnounce');
+      const heroSubannounce = document.getElementById('heroSubannounce');
+      const heroMetaRelease = document.getElementById('heroMetaRelease');
+      const heroPrimary = document.getElementById('heroPrimary');
+      const heroSecondary = document.getElementById('heroSecondary');
+
+      const isReleased = now.getTime() >= releaseDate.getTime();
+
+      function setReleased(){
+        if (heroAnnounce) heroAnnounce.textContent = "THE NEW SINGLE OUT NOW";
+        if (heroSubannounce) heroSubannounce.textContent = "AVAILABLE NOW TO STREAM & PURCHASE";
+        if (heroMetaRelease) heroMetaRelease.textContent = "Single · OUT NOW";
+
+        if (heroPrimary) {
+          heroPrimary.textContent = "LISTEN";
+          heroPrimary.href = "#music";
+          heroPrimary.removeAttribute("target");
+          heroPrimary.removeAttribute("rel");
+        }
+
+        if (heroSecondary) {
+          heroSecondary.textContent = "WATCH";
+          heroSecondary.href = "#videos";
+          heroSecondary.removeAttribute("data-ics");
+        }
+      }
+
+      function setPreRelease(){
+        if (heroAnnounce) heroAnnounce.textContent = "THE NEW SINGLE OUT APRIL 24, 2026";
+        if (heroSubannounce) heroSubannounce.textContent = "FOLLOW / GET NOTIFIED";
+        if (heroMetaRelease) heroMetaRelease.textContent = "Single · 24.04.2026";
+
+        if (heroPrimary) {
+          heroPrimary.textContent = "FOLLOW";
+          heroPrimary.href = "https://open.spotify.com/intl-fr/artist/3yQp4bKLIEdyO4jA6frSP8";
+          heroPrimary.target = "_blank";
+          heroPrimary.rel = "noopener";
+        }
+
+        if (heroSecondary) {
+          heroSecondary.textContent = "ADD TO CALENDAR";
+          heroSecondary.href = "#";
+          heroSecondary.setAttribute("data-ics", "1");
+        }
+      }
+
+      function downloadICS(){
+        // Event at 12:00 local time on release day (avoids TZ edge cases)
+        const pad = (n) => String(n).padStart(2, "0");
+        const dtstamp = `${now.getUTCFullYear()}${pad(now.getUTCMonth()+1)}${pad(now.getUTCDate())}T${pad(now.getUTCHours())}${pad(now.getUTCMinutes())}${pad(now.getUTCSeconds())}Z`;
+        const dtstart = "20260424T120000";
+        const dtend = "20260424T121500";
+
+        const ics =
+`BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Silent Injury//Life And Loss//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:life-and-loss-20260424@siofficial
+DTSTAMP:${dtstamp}
+DTSTART:${dtstart}
+DTEND:${dtend}
+SUMMARY:Silent Injury — Life And Loss (Single Release)
+DESCRIPTION:New single release — https://siofficial.github.io/SilentInjury/
+URL:https://siofficial.github.io/SilentInjury/
+END:VEVENT
+END:VCALENDAR`;
+
+        const blob = new Blob([ics], { type: "text/calendar;charset=utf-8" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "Silent-Injury-Life-And-Loss.ics";
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        URL.revokeObjectURL(url);
+      }
+
+      if (isReleased) setReleased();
+      else setPreRelease();
+
+      if (heroSecondary) {
+        heroSecondary.addEventListener("click", (e) => {
+          if (heroSecondary.getAttribute("data-ics") === "1") {
+            e.preventDefault();
+            downloadICS();
+          }
+        });
+      }
+    })();
+
+    // Gallery live frames rotation (unchanged)
     const liveFrames = [
       {
         el: document.getElementById('live-frame-1'),
@@ -1298,9 +1375,8 @@
       }
     ];
 
-    function rotateLiveFrame(frame) {
+    function rotateLiveFrame(frame){
       if (!frame.el || !frame.images || frame.images.length < 2) return;
-
       frame.el.classList.add('is-swapping');
 
       setTimeout(() => {
@@ -1318,14 +1394,8 @@
     });
 
     setInterval(() => rotateLiveFrame(liveFrames[0]), 3000);
-
-    setTimeout(() => {
-      setInterval(() => rotateLiveFrame(liveFrames[1]), 3000);
-    }, 1000);
-
-    setTimeout(() => {
-      setInterval(() => rotateLiveFrame(liveFrames[2]), 3000);
-    }, 2000);
+    setTimeout(() => { setInterval(() => rotateLiveFrame(liveFrames[1]), 3000); }, 1000);
+    setTimeout(() => { setInterval(() => rotateLiveFrame(liveFrames[2]), 3000); }, 2000);
   </script>
 </body>
 </html>
