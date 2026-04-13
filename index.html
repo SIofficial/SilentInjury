@@ -1,4 +1,509 @@
-<!doctype html>
+
+
+
+Allez, tour d'horizon du site ? Forces et faiblesses ? = https://thvermot-wq.github.io/SILENT-MINISITE/
+
+
+Réflexion durant 2m 25s
+Voici mon tour d’horizon (version “booker / label / presse” : ce qui rassure, ce qui convertit, ce qui manque).
+
+Ce qui fonctionne très bien
+C’est un vrai EPK one-page : navigation claire (Bio / Release / Clip / Visualizer / Live / Presse / Tech / Galerie / Contact) et tout est accessible sans friction. 
+
+Hero efficace et orienté action : au-dessus de la ligne de flottaison tu donnes écoute + preuves + contact (player “Title Track”, press book, mail, clip, Bandcamp, + pack “Photos HD (ZIP)”). Ça coche exactement la checklist d’un programmateur pressé. 
+
+Crédibilité immédiate : la quote “Machine Head” est reprise sur le site et consolidée dans le press kit (page ITW). 
+
+Assets pro déjà là : press book PDF, tech rider PDF, clip YouTube, visualizer embarqué, pack photos. C’est rare d’avoir tout ça au même endroit et sans blabla. 
+
+Tech snapshot lisible : “100% DI”, patch minimal, Helix x2, Darkglass : l’info qu’un ingé son veut lire en 6 secondes. 
+
+SEO/partage social plutôt clean côté code : canonical, robots, OG/Twitter cards, JSON-LD MusicGroup/MusicAlbum/MusicRecording/MusicVideoObject. Sur un minisite de groupe, c’est un vrai plus. 
+
+
+Les faiblesses (celles qui coûtent des réponses / des clicks)
+Incohérence “line-up” : sur la page, l’extraction affiche encore “XXXXX — drums”. 
+
+Or ton press kit donne clairement Vincent Louvel / drums. 
+
+ c’est un artefact d’accessibilité/JS, ça fait “pas fini” pour (1) Google, (2) lecteurs sans JS, (3) copier-coller rapide.
+
+Dates live potentiellement périmées : tu as une grille de dates, mais au 23/02/2026, tout ce qui est listé est “historique” (dont 27.09.2025). 
+
+Un booker regarde d’abord “à venir” / “dispos 2026”. Si la section “Live” lit comme un passé clos, tu perds du momentum.
+
+“Presse / radio” trop minimaliste : tu as une bonne quote + lien press book, mais ça reste une carte courte. 
+
+Le press kit contient davantage (ITW, éléments “dif’ nationale”, etc.). 
+
+Là, tu n’exploites pas assez la preuve sociale sur la page elle-même.
+
+Galerie dépendante du JS : tu as prévu une fallback (liens), donc c’est déjà bien. 
+
+Mais si le JS merde (adblock, iOS capricieux, script non chargé), l’expérience “wow” disparaît : il faut que le mode dégradé reste sexy (pas une liste de liens qui fait annexe).
+
+Ton marketing un peu “absolu” par endroits : “Indiscutable en live.” 
+
+Ça peut marcher, mais c’est aussi une formulation qui peut crisper certains pros (réflexe : “prouve-le”). Ça se corrige avec une micro-preuve juste à côté (ex : “40–90 min, 100% DI, vidéo live 30s”).
+
+Priorités de patch (ordre “impact booking”)
+Fix line-up partout (remplacer “XXXXX — drums” par “Vincent Louvel — drums”, et s’assurer que c’est bien dans le HTML rendu, pas seulement via JS). 
+
+Refondre “Live” en 2 blocs : “À venir” (en haut) + “Passé / highlights” (en bas), et afficher un statut clair “Booking 2026 ouvert”. 
+
+Muscler “Presse / radio” sur la page : 3 puces max sous la quote (ex : “ITW Metal Décadence”, “Diffusion nationale…”, “DAB+ / canal…”) + éventuellement un mini extrait (10–15 s audio ou lien timecodé) renvoyant au press book. 
+
+Galerie : mode dégradé plus propre (si JS off : afficher quand même 6 vignettes en grille + bouton “Télécharger ZIP HD”). Là tu gardes l’effet “pro” même sans scripts. 
+
+Ajouter 1 preuve “live” : même une captation téléphone 20–30 secondes (son correct) intégrée dans “Live”. C’est souvent ce qui fait basculer une première réponse.
+
+Si tu veux, je te propose ensuite une checklist ultra-courte “EPK qui convertit” (10 points maximum) spécifique metalcore et je l’applique à ton index en mode patch (sans tout casser visuellement).
+
+
+vas-y pour la checklist.
+
+Checklist EPK “qui convertit” (metal / metalcore) — 10 points max
+Promesse instantanée (5–7 secondes)
+
+Genre + 2 influences max + proposition de valeur (ce qui vous distingue) en une ligne.
+
+À vérifier : tu as déjà “Metalcore (FR) / 2000s vibe” → ajoute un twist concret (ex : “gros refrains + leads mélodiques”, “2 guitars harmonisées”, “groove Machine Head-ish”, etc.) sans en faire une tartine.
+
+CTA au-dessus de la ligne de flottaison (les 3 indispensables)
+
+Book / contact (mail cliquable)
+
+Écouter (1 lecteur intégré + liens plateformes)
+
+Voir (1 vidéo clip/ live)
+
+Bonus : un seul bouton “Presskit PDF” (déjà OK).
+
+Preuves sociales visibles sans ouvrir le PDF
+
+1 quote forte (tu l’as) + 2 micro-preuves sous forme de puces :
+
+médias / radios / playlists / partenaires
+
+chiffres simples (vues clip, sorties, etc.) si vous en avez
+
+ou “support act / scènes” si pertinent
+
+Objectif : que la carte “Presse” soit utile même si la personne n’ouvre rien.
+
+Actu claire (ce qui est “en cours” aujourd’hui)
+
+Une ligne “Dernière sortie : … (date)” + “Prochain objectif : …”
+
+Sur un EPK, l’absence d’actu lisible fait croire que le projet est en pause.
+
+Section Live orientée booking (pas un cimetière de dates)
+
+Bloc À venir en premier (même si vide : “dates en cours / dispo 2026”)
+
+Bloc Passé ensuite (3–6 dates max, “highlights”)
+
+Optionnel : “Set 40–90 min” + “100% DI” visible ici aussi.
+
+Line-up complet, cohérent, sans placeholder
+
+Noms + rôles, homogènes partout (page + PDF).
+
+Zéro “XXXXX”. C’est un vrai tue-conversion.
+
+Tech rider “digest” lisible en 8 secondes
+
+Sur la page : 5–8 lignes max (DI, IEM/wedges, besoins FOH, patch list)
+
+Lien vers PDF complet pour le régisseur (déjà OK).
+
+Bonus : “On vient avec…” vs “On demande…” (clarifie la charge plateau).
+
+Pack médias prêt à télécharger
+
+Photos HD (déjà) + idéalement :
+
+1 logo PNG transparent
+
+1 bannière “cover” (OG)
+
+1 photo verticale (press / réseaux)
+
+Si tu as déjà tout dans le ZIP : indique-le en 1 ligne.
+
+Lecture mobile impeccable
+
+Test mental : pouce + 4G + fatigue.
+
+Points critiques : taille des boutons, scroll, embeds qui ne cassent pas la mise en page, pas d’espace vide “fond qui apparaît” quand une bulle est courte (c’est un vrai irritant).
+
+Contact “pro” sans friction
+
+Nom / rôle (booking, management) + mail + ville/pays + liens (IG, YouTube).
+
+Ajoute un “Response time” implicite via une phrase simple (“dispo pour dates 2026 / support / festivals”) plutôt que du blabla.
+
+Application rapide à ton minisite (priorités immédiates)
+P1 — Must fix
+
+Remplacer “XXXXX — drums” par le vrai nom (cohérence page/PDF).
+
+Live : “À venir / Dispo 2026” en haut, pas seulement des dates passées.
+
+Presse : ajouter 2–3 puces de preuves sociales directement sur la page.
+
+P2 — Conversion boost
+
+Ajouter un mini extrait live (20–30s) intégré dans “Live”.
+
+Galerie : fallback sans JS plus sexy (grille de vignettes + bouton ZIP).
+
+P3 — Finition
+
+Pack médias : préciser le contenu du ZIP (logos, formats).
+
+Micro-copy : remplacer “Indiscutable en live” par une formulation + preuve (ex : “Solide en live — extrait 30s ci-dessous”).
+
+Si tu veux, je te donne maintenant une version micro-texte prête à coller (1 phrase “promise”, 3 puces “presse”, 2 lignes “live dispo 2026”) adaptée exactement à ce que tu as déjà sur le site, sans inventer de faits.
+
+
+traduis : Silent Injury avance sur une ligne à haute tension crépitant d'électricité et de mélodies.
+Des tracks sans concession ni facilité. Juste une envie de refaire revivre une époque nourrie de toutes leurs influences pour créer leur propre style,en fiers descendants de la mouvance Metal de cette dernière décennie.
+
+Thought for 5s
+Traduction (fidèle, EPK-ready)
+Silent Injury moves along a high-voltage line, crackling with electricity and melody.
+Tracks with no compromise and no easy way out. Just the urge to bring an era back to life—fed by all their influences—to forge a sound of their own, as proud heirs to the metal wave of the last decade.
+
+Variante (plus punchy / plus “tagline”)
+Silent Injury walks a live wire—equal parts voltage and melody.
+No concessions. No shortcuts. Just one drive: revive the 2000s spirit through everything they’ve absorbed, and turn it into their own signature—straight out of the last decade’s metal lineage.
+
+
+COmment changer la photo dans le "About" du minisite ?
+
+Thought for 21s
+Sur ton minisite, la “photo” associée à la partie About/Bio est en pratique celle du bloc Hero (la grande image à droite, avec la pastille “📷 Photo live”). Dans ton index.html, c’est cette ligne : 
+
+
+<aside class="card hero-media" aria-label="Photo live">
+  <img src="assets/hero.jpg" alt="Silent Injury — photo live" loading="eager" />
+  <div class="cap">📷 Photo live</div>
+</aside>
+Méthode 1 (la plus simple) : remplacer le fichier
+Dans ton repo GitHub SILENT-MINISITE, va dans le dossier assets/
+
+Remplace assets/hero.jpg par ta nouvelle image (même nom, même extension)
+
+Commit + push → GitHub Pages mettra à jour automatiquement.
+
+✅ Avantage : tu ne touches pas au HTML.
+
+Méthode 2 : changer le chemin dans le HTML
+Upload ta nouvelle image dans assets/ (ex : hero-2026.jpg)
+
+Modifie le src :
+
+<img src="assets/hero-2026.jpg" alt="Silent Injury — photo live" loading="eager" />
+✅ Avantage : tu gardes l’ancienne en backup.
+
+Reco format (pour que ça rende “cinéma” sans plomber le site)
+Garde un ratio proche du rendu actuel (4:3 est celui de ton CSS aspect-ratio: 4 / 3;) 
+
+
+Largeur : ~1600–2400 px
+
+JPEG qualité ~75–85 (ou WebP si tu veux optimiser davantage)
+
+Cas voisin (souvent confondu) : la photo de preview quand tu partages le lien
+Si tu parles de l’image qui apparaît sur Discord/WhatsApp/Twitter, ce n’est pas hero.jpg mais assets/og-cover.jpg dans les meta OG : 
+
+
+Dans ce cas, remplace assets/og-cover.jpg (ou change son nom dans le <meta property="og:image" ...>).
+
+Si tu me dis “c’est la photo X (où elle apparaît exactement : bloc hero / preview partage / galerie)”, je te donne le chemin exact et le patch minimal correspondant.
+
+
+comment supprimer le bouton EN (langue anglais) en haut ? Je viens de tout mettre en français / anglais sur la page
+
+Thought for 7s
+Dans ton index.html, le bouton EN est entièrement généré par ce bloc (dans le <div class="lang-switch"> … </div>). 
+
+
+Option A — supprimer uniquement le bouton EN (le plus simple)
+Supprime juste cette balise :
+
+<a class="lang-btn is-disabled" href="#" aria-disabled="true" tabindex="-1" aria-label="English (coming soon)" title="English (soon)">
+  <span class="flag" aria-hidden="true">🇬🇧</span>
+</a>
+Tu gardes le bouton 🇫🇷 si tu veux (même s’il ne sert plus à grand-chose).
+
+Option B — supprimer tout le sélecteur de langue (recommandé si la page est bilingue)
+Supprime carrément tout le bloc :
+
+<div class="lang-switch" aria-label="Langue">
+  <a class="lang-btn is-active" href="./" aria-current="page" aria-label="Français" title="Français">
+    <span class="flag" aria-hidden="true">🇫🇷</span>
+  </a>
+  ...
+</div>
+Et, bonus “propre” : tu peux aussi virer dans le <style> les règles CSS dédiées (.lang-switch, .lang-btn, .flag) si tu veux alléger le fichier (pas obligatoire, ça ne cassera rien si tu les laisses).
+
+Si tu veux, je te donne un patch “diff” prêt à coller (exactement au bon endroit dans ton fichier) — dis-moi juste si tu veux garder 🇫🇷 ou tout enlever.
+
+
+Comment faire apsser ce site en version premium ? (https://github.com/SIofficial/SilentInjury/tree/main) + (https://siofficial.github.io/SilentInjury/)
+
+Thought for 2m 38s
+Tu as déjà une base “premium” côté UI (palette, radius, ombres, sticky header, layout cards). 
+
+Ce qui empêche le site de faire premium aujourd’hui, c’est surtout : (1) cohérence technique/SEO, (2) friction/bugs visibles, (3) preuve & packaging pro.
+
+1) Les “release blockers” (à corriger en premier)
+A) Tout ton SEO pointe vers… un autre site
+Dans index.html, le canonical, les OG/Twitter cards, les hreflang et même le JSON-LD pointent vers thvermot-wq.github.io/SILENT-MINISITE/ au lieu de ton GitHub Pages actuel. 
+
+Idem dans robots.txt et sitemap.xml (Sitemap + <loc>). 
+
+Action la plus “premium” (et la plus rentable) : fais un Search & Replace global dans le repo :
+
+remplace https://thvermot-wq.github.io/SILENT-MINISITE/ par l’URL GitHub Pages de ton repo (dans ton cas : https://siofficial.github.io/SilentInjury/)
+
+Tu dois le faire au minimum dans :
+
+index.html (canonical, og:url, og:image, twitter:image, JSON-LD, hreflang) 
+
+robots.txt (ligne Sitemap) 
+
+sitemap.xml (<loc>…</loc>) 
+
+B) Le lien “English” du menu est cassé / hors repo
+Ton menu pointe vers /SILENT-MINISITE/en/. 
+
+Et sur le site publié, on voit encore “English” dans la navigation. 
+
+Si tu as tout mis FR/EN sur une seule page :
+
+supprime le lien “English” du menu (et supprime aussi les hreflang si tu n’as plus de page EN séparée). 
+
+Si tu veux garder une page EN séparée :
+
+le repo a bien un dossier en/ avec index.html. 
+
+dans ce cas, remplace le lien par ./en/ et garde des hreflang cohérents (sur le bon domaine).
+
+C) La vidéo “Break The Mirror” semble fallback (pas d’embed propre)
+Sur la page publiée, la section Videos affiche “Votre navigateur ne supporte pas la vidéo.” 
+
+Ça donne immédiatement une impression “pas fini”.
+
+Upgrade premium : embed YouTube en iframe (privacy-friendly) au lieu d’un <video> muet :
+
+<iframe
+  class="video-frame"
+  src="https://www.youtube-nocookie.com/embed/wf1ajH-h7EQ"
+  title="Silent Injury — Break The Mirror"
+  loading="lazy"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  allowfullscreen>
+</iframe>
+2) “Premium” = packaging pro (ce qui convertit les bookers)
+A) Un bloc “Booking” qui se voit sans scroller
+Tu as déjà “Booking open” dans le hero. 
+
+Passe en mode premium en ajoutant un bouton Booking visible dans le header (même quand on scrolle), genre “Book / Get in touch”, qui pointe vers mailto:.
+
+B) EPK “digest” (sans ouvrir le PDF)
+Tu as les liens Presskit/Tech rider/Photos. 
+
+Version premium : 3 cartes avec une phrase chacune :
+
+Presskit : “bio + quotes + infos release”
+
+Tech rider : “100% DI / patch minimal / set lengths”
+
+Photos HD : “portraits + live + cover”
+
+C) Proof points concrets (2–3 puces max)
+Le texte “About” est bien, et tu as déjà FR + EN côte à côte. 
+
+Mais premium = preuves non contestables :
+
+1 quote presse (déjà) + 2 micro-preuves (diffusions, scènes, chiffres si tu en as)
+
+“Set 40–90 min” + “zone de déplacement” + “dispo 2026” au même endroit (Tour + Contact)
+
+3) Micro-polish design (le “gloss”)
+A) Typos : éviter le “presque”
+Ton CSS prévoit une font “Omicron” mais le dossier assets/fonts/ n’existe pas dans le repo. 
+
+Deux choix premium :
+
+soit tu ajoutes vraiment la font (avec licence claire) dans assets/fonts/
+
+soit tu supprimes la dépendance et tu assumes un duo net (ex : Orbitron pour titres + Inter pour texte)
+
+B) Images : WebP + preload du hero
+Ton assets/hero.jpg est central. 
+
+Premium = (1) WebP (2) preload (3) fetchpriority="high" sur l’image hero.
+
+Le plan “premium” en 45 minutes (ordre exact)
+Search & replace de l’ancien domaine partout (head + JSON-LD + robots + sitemap). 
+
+Décider la stratégie langue (une page bilingue ⇒ supprimer “English” + hreflang ; deux pages ⇒ ./en/ + hreflang correct). 
+
+Fix vidéo : iframe YouTube (plus de fallback “navigateur…”). 
+
+Header : CTA booking visible + EPK en 3 cartes.
+
+Typo : either ship Omicron, or simplify (éviter les promesses non tenues). 
+
+Si tu veux, je te fais un patch “copier-coller” ciblé (les blocs exacts head, menu, vidéo, robots, sitemap), mais il me faut juste une chose : tu choisis A) page unique bilingue ou B) page EN séparée ./en/.
+
+
+oui, il faudrait je pense dispatcher les éléments du bouton menu directement dans le header.
+
+Thought for 1m 49s
+Oui — ton header est déjà “premium” (fixed + blur), mais aujourd’hui il ne contient qu’un bouton “Menu” 
+, et toute la navigation vit dans l’overlay 
+.
+L’idée : remonter les liens du menu dans le header sur desktop, et garder l’overlay pour mobile (zéro risque, zéro régression).
+
+Patch minimal (recommandé) : liens dans le header (desktop) + menu overlay (mobile)
+1) Ajoute une nav dans le header
+Dans index.html, repère le header :
+
+<header class="site-header" id="siteHeader">
+  <div class="container site-header__inner">
+    <a class="brand" href="#top" ...>...</a>
+
+    <div class="header-actions">
+      <button class="menu-button" id="menuButton" ...>Menu ...</button>
+    </div>
+  </div>
+</header>
+Remplace-le par ceci (tu ajoutes <nav class="header-nav"> entre la brand et les actions) :
+
+<header class="site-header" id="siteHeader">
+  <div class="container site-header__inner">
+    <a class="brand" href="#top" aria-label="Accueil Silent Injury">
+      <img src="assets/logo-watermark.png" alt="Logo Silent Injury" />
+      <span class="brand__meta">
+        <span class="brand__title">Silent Injury</span>
+        <span class="brand__sub">Metalcore · France</span>
+      </span>
+    </a>
+
+    <!-- NEW: nav visible en desktop -->
+    <nav class="header-nav" aria-label="Navigation principale">
+      <a href="#release">Release</a>
+      <a href="#tour">Tour</a>
+      <a href="#music">Music</a>
+      <a href="#videos">Videos</a>
+      <a href="#about">About</a>
+      <a href="#contact" class="is-cta">EPK</a>
+    </nav>
+
+    <div class="header-actions">
+      <a class="header-cta" href="mailto:silentinjuryofficiel@gmail.com?subject=Booking%20Silent%20Injury">Book</a>
+
+      <!-- Menu conservé pour mobile -->
+      <button class="menu-button" id="menuButton" type="button"
+        aria-expanded="false" aria-controls="menuOverlay" aria-label="Ouvrir le menu">
+        Menu
+        <span class="menu-button__bars" aria-hidden="true">
+          <span></span><span></span><span></span>
+        </span>
+      </button>
+    </div>
+  </div>
+</header>
+(Les ancres #release #tour #music #videos #about #contact existent déjà dans ton fichier.) 
+
+2) Ajoute le CSS pour rendre ça propre (et responsive)
+Dans ton <style>, fais deux micro-changements :
+
+(a) étends le style “pill” existant pour inclure .header-cta
+Tu as actuellement :
+
+.lang-link,
+.menu-button { ... }
+Change en :
+
+.lang-link,
+.menu-button,
+.header-cta { ... }
+(C’est exactement le même rendu, sans dupliquer du CSS.) 
+
+(b) ajoute ce bloc CSS (idéalement juste après .header-actions { ... }) 
+ :
+
+.header-nav{
+  display:none;                 /* caché sur mobile */
+  align-items:center;
+  justify-content:center;
+  gap:.35rem;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.header-nav a{
+  text-decoration:none;
+  font-size:.72rem;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color: var(--muted-2);
+  padding:.55rem .7rem;
+  border-radius:999px;
+  border:1px solid transparent;
+  white-space:nowrap;
+}
+
+.header-nav a:hover{
+  color: var(--text);
+  background: rgba(255,255,255,.05);
+  border-color: rgba(255,255,255,.12);
+}
+
+.header-nav a.is-cta{
+  color: var(--text);
+  border-color: var(--line);
+  background: rgba(255,255,255,.04);
+}
+
+/* Desktop: on montre la nav inline, et on masque le bouton Menu */
+@media (min-width: 900px){
+  .header-nav{ display:flex; }
+  .menu-button{ display:none; }
+}
+Résultat :
+
+desktop = header premium avec liens visibles + bouton Book
+
+mobile = tu gardes l’expérience actuelle avec overlay “Menu”
+
+3) Vu que tu as tout en FR/EN sur la même page : vire “English” dans l’overlay
+Dans l’overlay menu, tu as encore : 
+
+<a href="/SILENT-MINISITE/en/">English</a>
+Supprime cette ligne (sinon ça fait “lien cassé / autre site”).
+
+Option “full premium” (si tu veux) : supprimer complètement l’overlay Menu
+Quand tu seras content du header, tu pourras supprimer :
+
+le <div class="menu-overlay" id="menuOverlay"> ... 
+
+tout le CSS .menu-overlay ... 
+
+et le JS (s’il y en a) qui ouvre/ferme le menu.
+
+Mais je te conseille de commencer par le patch minimal ci-dessus : c’est clean, safe, et ça fait immédiatement “site pro”.
+
+Si tu veux, je te donne la variante où la nav est visible aussi sur mobile (en “scroll horizontal” façon capsules) — très premium aussi, et ça permet de supprimer le menu overlay sans casser l’ergonomie.
+
+
+on va commencer par le patch ci dessus, points 1, 2 et 3. PAtche tout mon index : <!doctype html>
 <html lang="fr">
 <head>
   <meta charset="utf-8" />
@@ -1273,3 +1778,1340 @@
   </script>
 </body>
 </html>
+
+Thought for 33s
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Silent Injury | Home Page</title>
+  <meta name="description" content="Silent Injury Homepage — official home page: music, videos, live dates, press kit, tech rider and contact." />
+  <meta name="theme-color" content="#060608" />
+  <link rel="canonical" href="https://siofficial.github.io/SilentInjury/" />
+  <link rel="alternate" hreflang="fr" href="https://siofficial.github.io/SilentInjury/" />
+  <link rel="alternate" hreflang="en" href="https://siofficial.github.io/SilentInjury/en/" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+
+  <meta property="og:site_name" content="Silent Injury" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:title" content="Silent Injury | Home Page" />
+  <meta property="og:description" content="Silent Injury Homepage: official music, video, live, press, tech and contact." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://siofficial.github.io/SilentInjury/" />
+  <meta property="og:image" content="https://siofficial.github.io/SilentInjury/assets/og-cover.jpg" />
+  <meta property="og:image:alt" content="Silent Injury — EPK / Booking" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Silent Injury | Home Page" />
+  <meta name="twitter:description" content="Silent Injury Homepage: official music, video, live, press, tech and contact." />
+  <meta name="twitter:image" content="https://siofficial.github.io/SilentInjury/assets/og-cover.jpg" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://siofficial.github.io/SilentInjury/#website",
+        "url": "https://siofficial.github.io/SilentInjury/",
+        "name": "Silent Injury | Home Page",
+        "alternateName": "Silent Injury Homepage"
+      },
+      {
+        "@type": "MusicGroup",
+        "@id": "https://siofficial.github.io/SilentInjury/#musicgroup",
+        "name": "Silent Injury",
+        "genre": ["Metalcore"],
+        "url": "https://siofficial.github.io/SilentInjury/",
+        "image": "https://siofficial.github.io/SilentInjury/assets/og-cover.jpg",
+        "sameAs": [
+          "https://open.spotify.com/intl-fr/artist/3yQp4bKLIEdyO4jA6frSP8",
+          "https://silentinjury.bandcamp.com/album/silent-injury",
+          "https://www.youtube.com/watch?v=wf1ajH-h7EQ",
+          "https://www.instagram.com/silentinjury_band/",
+          "https://www.facebook.com/profile.php?id=61552999371364"
+        ],
+        "description": "Metalcore (FR). EPK / Booking : liens, live, presse, tech, contact."
+      }
+    ]
+  }
+  </script>
+
+  <link rel="icon" href="assets/logo.png" />
+
+  <style>
+    /* Ajoute manuellement le fichier assets/fonts/Omicron.ttf dans le repo pour activer le titre du hero. */
+    @font-face {
+      font-family: "Omicron";
+      src: local("Omicron"), url("assets/fonts/Omicron.ttf") format("truetype");
+      font-display: swap;
+    }
+
+    :root {
+      --bg: #060608;
+      --bg-deep: #0b0b0f;
+      --panel: #111217;
+      --panel-soft: #181a21;
+      --line: rgba(255,255,255,.12);
+      --line-strong: rgba(255,255,255,.2);
+      --text: #f5f7fb;
+      --muted: #b6bcc9;
+      --muted-2: #8d94a3;
+      --accent: #cf1028;
+      --accent-soft: rgba(207,16,40,.18);
+      --max: 1240px;
+      --radius: 22px;
+      --shadow: 0 24px 70px rgba(0,0,0,.38);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(207,16,40,.08), transparent 28%),
+        linear-gradient(180deg, #050507 0%, #0a0a0e 60%, #050507 100%);
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.45;
+      overflow-x: hidden;
+    }
+
+    body.menu-open { overflow: hidden; }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; }
+    button, input, textarea { font: inherit; }
+    :focus-visible { outline: 2px solid #fff; outline-offset: 4px; }
+
+    .container {
+      width: min(100% - 2rem, var(--max));
+      margin-inline: auto;
+    }
+
+    .site-header {
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 50;
+      border-bottom: 1px solid transparent;
+      transition: background-color .25s ease, border-color .25s ease, backdrop-filter .25s ease;
+    }
+
+    .site-header.is-scrolled {
+      background: rgba(5,5,7,.84);
+      border-color: var(--line);
+      backdrop-filter: blur(14px);
+    }
+
+    .site-header__inner {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: .85rem;
+      text-decoration: none;
+      min-width: 0;
+    }
+
+    .brand img {
+      width: 38px;
+      height: 38px;
+      object-fit: contain;
+      opacity: .92;
+      filter: drop-shadow(0 0 14px rgba(255,255,255,.12));
+    }
+
+    .brand__meta {
+      display: grid;
+      gap: .08rem;
+    }
+
+    .brand__title {
+      font-size: .9rem;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .brand__sub {
+      font-size: .68rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--muted-2);
+    }
+
+    /* NEW: nav visible en desktop */
+    .header-nav{
+      display:none;                 /* caché sur mobile */
+      align-items:center;
+      justify-content:center;
+      gap:.35rem;
+      flex: 1 1 auto;
+      min-width: 0;
+      padding: 0 .25rem;
+    }
+
+    .header-nav a{
+      text-decoration:none;
+      font-size:.72rem;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      color: var(--muted-2);
+      padding:.55rem .7rem;
+      border-radius:999px;
+      border:1px solid transparent;
+      white-space:nowrap;
+    }
+
+    .header-nav a:hover{
+      color: var(--text);
+      background: rgba(255,255,255,.05);
+      border-color: rgba(255,255,255,.12);
+    }
+
+    .header-nav a.is-cta{
+      color: var(--text);
+      border-color: var(--line);
+      background: rgba(255,255,255,.04);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: .7rem;
+    }
+
+    .lang-link,
+    .menu-button,
+    .header-cta {
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      color: var(--text);
+      min-height: 44px;
+      padding: 0 .95rem;
+      border-radius: 999px;
+      text-decoration: none;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      font-size: .74rem;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: .55rem;
+      cursor: pointer;
+    }
+
+    .menu-button__bars {
+      display: inline-grid;
+      gap: 4px;
+    }
+
+    .menu-button__bars span {
+      width: 16px;
+      height: 1px;
+      background: currentColor;
+      display: block;
+    }
+
+    /* Desktop: on montre la nav inline, et on masque le bouton Menu */
+    @media (min-width: 900px){
+      .header-nav{ display:flex; }
+      .menu-button{ display:none; }
+    }
+
+    .menu-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 60;
+      background:
+        linear-gradient(180deg, rgba(7,7,9,.96), rgba(7,7,9,.985)),
+        url('assets/gallery/09-silent-injury-live-scene-public-coulisses-noir-blanc.webp') center/cover no-repeat;
+      display: grid;
+      align-items: end;
+      padding: clamp(6rem, 8vw, 7.5rem) 1.25rem 2rem;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity .24s ease, visibility .24s ease;
+    }
+
+    .menu-overlay::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,.62), rgba(0,0,0,.9));
+    }
+
+    .menu-overlay.is-open {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+
+    .menu-overlay__inner {
+      position: relative;
+      z-index: 1;
+      width: min(100%, 1240px);
+      margin-inline: auto;
+      display: grid;
+      gap: 2rem;
+    }
+
+    .menu-overlay__top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .menu-label {
+      font-size: .74rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .menu-close {
+      border: 1px solid var(--line);
+      background: transparent;
+      color: var(--text);
+      width: 44px;
+      height: 44px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .menu-nav {
+      display: grid;
+      gap: .35rem;
+      padding-bottom: 1rem;
+    }
+
+    .menu-nav a {
+      text-decoration: none;
+      font-size: clamp(1.8rem, 4vw, 3.4rem);
+      font-weight: 800;
+      line-height: .98;
+      letter-spacing: .03em;
+      text-transform: uppercase;
+      padding: .3rem 0;
+      width: fit-content;
+    }
+
+    .menu-nav a:hover { color: #ffffff; }
+
+    .menu-overlay__footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      align-items: center;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      padding-top: 1rem;
+    }
+
+    .hero {
+      position: relative;
+      min-height: 100svh;
+      display: grid;
+      align-items: end;
+      overflow: clip;
+      background:
+        linear-gradient(180deg, rgba(0,0,0,.25), rgba(0,0,0,.88)),
+        linear-gradient(90deg, rgba(0,0,0,.72) 0%, rgba(0,0,0,.55) 34%, rgba(0,0,0,.12) 100%),
+        url('assets/gallery/15-silent-injury-live-arthur-delorme-thibault-vermot-vincent-louvel-groupe-noir-blanc.webp') center top / cover no-repeat;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 16% 15%, rgba(207,16,40,.33), transparent 32%),
+        linear-gradient(180deg, rgba(0,0,0,.14), rgba(0,0,0,.36));
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0 0;
+      height: 140px;
+      background: linear-gradient(180deg, transparent, #050507 85%);
+      pointer-events: none;
+    }
+
+    .hero__watermark {
+      position: absolute;
+      right: min(4vw, 3rem);
+      top: 18vh;
+      width: min(46vw, 520px);
+      opacity: .09;
+      filter: drop-shadow(0 0 25px rgba(255,255,255,.08));
+      pointer-events: none;
+    }
+
+    .hero__inner {
+      position: relative;
+      z-index: 1;
+      padding: 8.2rem 0 3rem;
+      min-height: 100svh;
+      display: flex;
+      align-items: end;
+    }
+
+    .hero__content {
+      width: min(100%, 780px);
+      padding-bottom: clamp(1rem, 4vw, 3rem);
+    }
+
+    .eyebrow {
+      margin: 0 0 1rem;
+      font-size: .72rem;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: #e8ebf2;
+      font-weight: 700;
+    }
+
+    .hero__title {
+      margin: 0;
+      font-family: "Omicron", "Orbitron", Inter, sans-serif;
+      font-size: clamp(3rem, 11vw, 8rem);
+      line-height: .88;
+      font-weight: 400;
+      letter-spacing: .08em;
+      text-transform: lowercase;
+      text-wrap: balance;
+      text-shadow: 0 0 28px rgba(255,255,255,.06);
+    }
+
+    .hero__dek {
+      max-width: 36ch;
+      margin: 1.1rem 0 0;
+      font-size: clamp(1.02rem, 2.2vw, 1.32rem);
+      color: #edf0f6;
+    }
+
+    .hero__meta {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      align-items: center;
+      margin: 1.6rem 0 0;
+      color: var(--muted);
+      font-size: .82rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .85rem;
+      margin-top: 1.6rem;
+    }
+
+    .cta {
+      min-height: 48px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      padding: .82rem 1.25rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: .55rem;
+      text-decoration: none;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      font-size: .76rem;
+      background: rgba(255,255,255,.04);
+      transition: transform .18s ease, background-color .18s ease, border-color .18s ease;
+    }
+
+    .cta:hover { transform: translateY(-1px); }
+
+    .cta--primary {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+      box-shadow: 0 14px 40px rgba(207,16,40,.34);
+    }
+
+    .cta--ghost {
+      background: rgba(0,0,0,.22);
+      border-color: rgba(255,255,255,.24);
+    }
+
+    .scroll-anchor {
+      scroll-margin-top: 94px;
+    }
+
+    .section {
+      position: relative;
+      padding: clamp(3.2rem, 7vw, 6rem) 0;
+    }
+
+    .section + .section { border-top: 1px solid var(--line); }
+
+    .section-heading {
+      display: grid;
+      gap: .8rem;
+      margin-bottom: 1.6rem;
+    }
+
+    .section-kicker {
+      font-size: .72rem;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+      color: var(--muted-2);
+      font-weight: 700;
+      margin: 0;
+    }
+
+    .section-title {
+      margin: 0;
+      font-size: clamp(1.7rem, 4vw, 3.15rem);
+      line-height: .95;
+      text-transform: uppercase;
+      letter-spacing: .03em;
+    }
+
+    .section-intro {
+      margin: 0;
+      max-width: 48ch;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .feature {
+      display: grid;
+      gap: 1.4rem;
+      align-items: stretch;
+    }
+
+    .feature__media,
+    .feature__copy,
+    .panel,
+    .tour-board,
+    .video-card,
+    .gallery-card,
+    .contact-card {
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.025));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .feature__media {
+      overflow: hidden;
+      min-height: 320px;
+    }
+
+    .feature__media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      aspect-ratio: 1 / 1;
+    }
+
+    .feature__copy {
+      padding: clamp(1.35rem, 3vw, 2rem);
+      display: grid;
+      align-content: center;
+      gap: 1rem;
+    }
+
+    .feature__eyebrow,
+    .panel__eyebrow,
+    .video-card__eyebrow {
+      margin: 0;
+      font-size: .72rem;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--muted-2);
+      font-weight: 700;
+    }
+
+    .feature__title {
+      margin: 0;
+      font-size: clamp(1.9rem, 4vw, 3.4rem);
+      line-height: .94;
+      text-transform: uppercase;
+    }
+
+    .feature__copy p,
+    .panel p,
+    .video-card p,
+    .contact-card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .feature__stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .7rem;
+      margin-top: .2rem;
+    }
+
+    .pill {
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.04);
+      padding: .55rem .85rem;
+      font-size: .75rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: #eef2fb;
+    }
+
+    .tour-board {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(1.35rem, 3vw, 2rem);
+    }
+
+    .tour-board::before {
+      content: "";
+      position: absolute;
+      inset: auto -7% -34% auto;
+      width: min(48vw, 460px);
+      aspect-ratio: 1;
+      background: url('assets/logo-watermark.png') center/contain no-repeat;
+      opacity: .055;
+      pointer-events: none;
+      filter: drop-shadow(0 0 18px rgba(255,255,255,.08));
+    }
+
+    .tour-board__grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      gap: 1rem;
+    }
+
+    .tour-board__headline {
+      display: grid;
+      gap: .5rem;
+      max-width: 45rem;
+    }
+
+    .tour-list {
+      list-style: none;
+      margin: .2rem 0 0;
+      padding: 0;
+      display: grid;
+      gap: .85rem;
+    }
+
+    .tour-list li {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: .25rem;
+      padding: 1rem 0;
+      border-top: 1px solid rgba(255,255,255,.1);
+    }
+
+    .tour-list li:first-child { border-top: 0; }
+
+    .tour-list strong {
+      font-size: .86rem;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .tour-list span {
+      color: var(--muted);
+    }
+
+    .cards-4 {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+
+    .panel {
+      padding: 1.2rem;
+      display: grid;
+      gap: .8rem;
+      min-height: 100%;
+    }
+
+    .panel h3,
+    .contact-card h3 {
+      margin: 0;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+    }
+
+    .video-layout {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: 1fr;
+    }
+
+    .video-card {
+      overflow: hidden;
+    }
+
+    .video-card__copy {
+      padding: 1rem 1.1rem 1.1rem;
+      display: grid;
+      gap: .7rem;
+    }
+
+    .video-frame {
+      aspect-ratio: 16 / 9;
+      width: 100%;
+      border: 0;
+      display: block;
+      background: #000;
+    }
+
+    .gallery-grid {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+
+    .gallery-card {
+      overflow: hidden;
+      min-height: 100%;
+    }
+
+    .gallery-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      aspect-ratio: 4 / 3;
+      filter: contrast(1.03) brightness(.94);
+      transition: transform .35s ease, opacity .25s ease;
+      opacity: 1;
+    }
+
+    .gallery-card img.is-swapping {
+      opacity: .2;
+    }
+
+    .gallery-card:hover img { transform: scale(1.03); }
+
+    .about-grid {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: 1fr;
+      align-items: stretch;
+    }
+
+    .about-copy {
+      display: grid;
+      gap: 1rem;
+      align-content: start;
+    }
+
+    .about-copy p {
+      margin: 0;
+      color: var(--muted);
+      max-width: 56ch;
+    }
+
+    .about-metrics {
+      display: grid;
+      gap: .75rem;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .metric {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: rgba(255,255,255,.035);
+      padding: 1rem;
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 1.35rem;
+      line-height: 1;
+      margin-bottom: .4rem;
+    }
+
+    .metric span {
+      color: var(--muted);
+      font-size: .88rem;
+    }
+
+    .about-photo {
+      overflow: hidden;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      min-height: 320px;
+    }
+
+    .about-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      aspect-ratio: 1 / 1;
+    }
+
+    .contact-grid {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: 1fr;
+    }
+
+    .contact-card {
+      padding: 1.3rem;
+      display: grid;
+      gap: .85rem;
+      align-content: start;
+    }
+
+    .contact-actions {
+      display: flex;
+      gap: .8rem;
+      flex-wrap: wrap;
+      margin-top: .2rem;
+    }
+
+    .contact-email {
+      word-break: break-word;
+    }
+
+    .footer {
+      border-top: 1px solid var(--line);
+      padding: 1.8rem 0 2.3rem;
+      color: var(--muted);
+    }
+
+    .footer__row {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer__social {
+      display: flex;
+      gap: .8rem;
+      flex-wrap: wrap;
+    }
+
+    .footer__social a {
+      text-decoration: none;
+      font-size: .8rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--text);
+    }
+
+    @media (min-width: 720px) {
+      .cards-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .gallery-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .contact-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .about-grid { grid-template-columns: minmax(0, 1.1fr) minmax(360px, .9fr); }
+    }
+
+    @media (min-width: 900px) {
+      .feature { grid-template-columns: minmax(320px, .9fr) minmax(0, 1.1fr); }
+      .video-layout { grid-template-columns: minmax(0, 1.4fr) minmax(320px, .8fr); }
+      .tour-list li {
+        grid-template-columns: 190px minmax(0, 1fr) auto;
+        align-items: center;
+        gap: 1rem;
+      }
+      .tour-list li a { justify-self: end; }
+      .tour-board__grid { grid-template-columns: minmax(0, 1.3fr) minmax(360px, .9fr); align-items: start; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header" id="siteHeader">
+    <div class="container site-header__inner">
+      <a class="brand" href="#top" aria-label="Accueil Silent Injury">
+        <img src="assets/logo-watermark.png" alt="Logo Silent Injury" />
+        <span class="brand__meta">
+          <span class="brand__title">Silent Injury</span>
+          <span class="brand__sub">Metalcore · France</span>
+        </span>
+      </a>
+
+      <!-- NEW: nav inline (desktop) -->
+      <nav class="header-nav" aria-label="Navigation principale">
+        <a href="#release">Release</a>
+        <a href="#tour">Tour</a>
+        <a href="#music">Music</a>
+        <a href="#videos">Videos</a>
+        <a href="#about">About</a>
+        <a href="#contact" class="is-cta">EPK</a>
+      </nav>
+
+      <div class="header-actions">
+        <!-- NEW: CTA booking visible -->
+        <a class="header-cta" href="mailto:silentinjuryofficiel@gmail.com?subject=Booking%20Silent%20Injury">Book</a>
+
+        <!-- Menu conservé (mobile) -->
+        <button class="menu-button" id="menuButton" type="button" aria-expanded="false" aria-controls="menuOverlay" aria-label="Ouvrir le menu">
+          Menu
+          <span class="menu-button__bars" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="menu-overlay" id="menuOverlay" aria-hidden="true">
+    <div class="menu-overlay__inner">
+      <div class="menu-overlay__top">
+        <span class="menu-label">Silent Injury</span>
+        <button class="menu-close" id="menuClose" type="button" aria-label="Fermer le menu">✕</button>
+      </div>
+
+      <nav class="menu-nav" aria-label="Navigation principale">
+        <a href="#top">Home</a>
+        <a href="#release">Release</a>
+        <a href="#tour">Tour</a>
+        <a href="#music">Music</a>
+        <a href="#videos">Videos</a>
+        <a href="#about">About</a>
+        <a href="#contact">EPK / Contact</a>
+      </nav>
+
+      <div class="menu-overlay__footer">
+        <span>Break The Mirror · official video online</span>
+        <div class="footer__social" aria-label="Réseaux sociaux">
+          <a href="https://www.instagram.com/silentinjury_band/" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://www.facebook.com/profile.php?id=61552999371364" target="_blank" rel="noopener">Facebook</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main id="top">
+    <section class="hero scroll-anchor" aria-label="Hero">
+      <img class="hero__watermark" src="assets/logo-watermark.png" alt="" aria-hidden="true" />
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <p class="eyebrow"></p>
+          <h1 class="hero__title">silent injury</h1>
+          <p class="hero__dek"></p>
+          <div class="hero__meta" aria-label="Informations rapides">
+            <span>France</span>
+            <span>Metalcore</span>
+            <span>Booking open</span>
+          </div>
+          <div class="cta-row">
+            <a class="cta cta--primary" href="https://www.youtube.com/watch?v=wf1ajH-h7EQ" target="_blank" rel="noopener">Video</a>
+            <a class="cta cta--ghost" href="#tour">Live section</a>
+            <a class="cta" href="mailto:silentinjuryofficiel@gmail.com?subject=Booking%20Silent%20Injury">Book</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="release" class="section scroll-anchor">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-kicker">Featured</p>
+          <h2 class="section-title">Latest release</h2>
+        </div>
+
+        <div class="feature">
+          <div class="feature__media">
+            <img src="assets/album-cover.jpg" alt="Pochette de l'album Silent Injury" loading="lazy" />
+          </div>
+
+          <article class="feature__copy">
+            <p class="feature__eyebrow">Break The Mirror · official music video</p>
+            <h3 class="feature__title">Silent Injury</h3>
+            <div class="feature__stats" aria-label="Formats disponibles">
+              <span class="pill">YouTube</span>
+              <span class="pill">Bandcamp</span>
+              <span class="pill">Streaming</span>
+            </div>
+            <div class="cta-row">
+              <a class="cta cta--primary" href="https://www.youtube.com/watch?v=wf1ajH-h7EQ" target="_blank" rel="noopener">Open YouTube</a>
+              <a class="cta" href="https://silentinjury.bandcamp.com/album/silent-injury" target="_blank" rel="noopener">Listen now</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="tour" class="section scroll-anchor">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-kicker">Live</p>
+          <h2 class="section-title">Tour</h2>
+        </div>
+
+        <section class="tour-board" aria-label="Informations live et booking">
+          <div class="tour-board__grid">
+            <div class="tour-board__headline">
+              <p class="panel__eyebrow">Booking / live / interviews</p>
+              <h3 class="feature__title" style="font-size:clamp(1.8rem,4vw,3rem);">New dates</h3>
+            </div>
+
+            <ul class="tour-list">
+              <li>
+                <strong>2026 · France</strong>
+                <a class="cta" href="mailto:silentinjuryofficiel@gmail.com?subject=Date%20live%20Silent%20Injury">Ask for availabilities</a>
+              </li>
+              <li>
+                <strong>Booking</strong>
+                <a class="cta cta--primary" href="mailto:silentinjuryofficiel@gmail.com?subject=Booking%20Silent%20Injury">Contact now</a>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section id="music" class="section scroll-anchor">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-kicker">Platforms</p>
+          <h2 class="section-title">Music</h2>
+        </div>
+
+        <div class="cards-4">
+          <article class="panel">
+            <p class="panel__eyebrow"></p>
+            <h3>Spotify</h3>
+            <p></p>
+            <a class="cta" href="https://open.spotify.com/intl-fr/artist/3yQp4bKLIEdyO4jA6frSP8" target="_blank" rel="noopener">Open Spotify</a>
+          </article>
+
+          <article class="panel">
+            <p class="panel__eyebrow"></p>
+            <h3>Bandcamp</h3>
+            <p></p>
+            <a class="cta" href="https://silentinjury.bandcamp.com/album/silent-injury" target="_blank" rel="noopener">Open Bandcamp</a>
+          </article>
+
+          <article class="panel">
+            <p class="panel__eyebrow"></p>
+            <h3>Apple Music</h3>
+            <p></p>
+            <a class="cta" href="https://music.apple.com/fr/album/silent-injury/1789094863" target="_blank" rel="noopener">Open Apple Music</a>
+          </article>
+
+          <article class="panel">
+            <p class="panel__eyebrow"></p>
+            <h3>Deezer</h3>
+            <p></p>
+            <a class="cta" href="https://www.deezer.com/fr/album/692870631" target="_blank" rel="noopener">Open Deezer</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="videos" class="section scroll-anchor">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-kicker">Watch</p>
+          <h2 class="section-title">Videos</h2>
+        </div>
+
+        <div class="video-layout">
+          <article class="video-card">
+            <iframe
+              class="video-frame"
+              src="https://www.youtube-nocookie.com/embed/wf1ajH-h7EQ"
+              title="Silent Injury — Break The Mirror"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
+            <div class="video-card__copy">
+              <p class="video-card__eyebrow">Official video</p>
+              <h3>Break The Mirror</h3>
+              <a class="cta cta--primary" href="https://www.youtube.com/watch?v=wf1ajH-h7EQ" target="_blank" rel="noopener">Watch on YouTube</a>
+            </div>
+          </article>
+
+          <article class="video-card">
+            <video class="video-frame" controls preload="metadata" poster="assets/album-cover.jpg">
+              <source src="assets/PARALLEL720.mp4" type="video/mp4" />
+              Votre navigateur ne supporte pas la vidéo.
+            </video>
+            <div class="video-card__copy">
+              <p class="video-card__eyebrow"></p>
+              <h3>Parallel Heights</h3>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-label="Galerie visuelle">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-kicker">Gallery</p>
+          <h2 class="section-title">Live frames</h2>
+        </div>
+
+        <div class="gallery-grid">
+          <figure class="gallery-card">
+            <img
+              id="live-frame-1"
+              src="assets/gallery/04-silent-injury-live-arthur-delorme-chant-guitare-noir-blanc-portrait.webp"
+              alt="Arthur Delorme sur scène"
+              loading="lazy"
+            />
+          </figure>
+
+          <figure class="gallery-card">
+            <img
+              id="live-frame-2"
+              src="assets/gallery/03-silent-injury-live-charles-rousseau-guitariste-soliste-chemise-carreaux.webp"
+              alt="Charles Rousseau sur scène"
+              loading="lazy"
+            />
+          </figure>
+
+          <figure class="gallery-card">
+            <img
+              id="live-frame-3"
+              src="assets/gallery/01-silent-injury-live-thibault-vermot-bassiste-vincent-louvel-batteur-noir-blanc-scene.webp"
+              alt="Section rythmique de Silent Injury sur scène"
+              loading="lazy"
+            />
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section scroll-anchor">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-kicker">Band</p>
+          <h2 class="section-title">About</h2>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-copy">
+            <p>Silent Injury avance sur une ligne à haute tension crépitant d'électricité et de mélodies. Des tracks sans concession ni facilité. Juste une envie de refaire revivre une époque nourrie de toutes leurs influences pour créer leur propre style,en fiers descendants de la mouvance Metal de cette dernière décennie.</p>
+            <p>Silent Injury walks a live wire — equal parts voltage and melody. No concessions. No shortcuts. Just one drive: revive the 2000s spirit through everything they’ve absorbed, and turn it into their own signature — straight out of the last decade’s metal lineage.</p>
+
+            <div class="about-metrics" aria-label="Repères du groupe">
+              <div class="metric">
+                <strong>France / Belgium / UK</strong>
+                <span>Where</span>
+              </div>
+              <div class="metric">
+                <strong>EPK</strong>
+                <span>Presskit & tech rider</span>
+              </div>
+              <div class="metric">
+                <strong>Live</strong>
+                <span>New set incoming!</span>
+              </div>
+              <div class="metric">
+                <strong>Video</strong>
+                <span>New clip incoming!</span>
+              </div>
+            </div>
+
+            <div class="cta-row">
+              <a class="cta" href="downloads/silent-injury-photos-hd.zip" download>Download HD photos</a>
+              <a class="cta" href="assets/silentinjury.mp3" target="_blank" rel="noopener">Emblem Track</a>
+            </div>
+          </div>
+
+          <figure class="about-photo">
+            <img src="assets/gallery/band-photo-credits.jpg" alt="Photo du groupe Silent Injury en répétition live" loading="lazy" />
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section scroll-anchor">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-kicker">Press / booking</p>
+          <h2 class="section-title">EPK / Contact</h2>
+        </div>
+
+        <div class="contact-grid">
+          <article class="contact-card">
+            <h3>Press & Tech</h3>
+            <div class="contact-actions">
+              <a class="cta" href="assets/presskit.pdf" target="_blank" rel="noopener">Presskit PDF</a>
+              <a class="cta" href="assets/techrider.pdf" target="_blank" rel="noopener">Tech rider PDF</a>
+              <a class="cta" href="downloads/silent-injury-photos-hd.zip" download>HD photos</a>
+            </div>
+          </article>
+
+          <article class="contact-card">
+            <h3>Booking</h3>
+            <a class="cta cta--primary contact-email" href="mailto:silentinjuryofficiel@gmail.com?subject=Booking%20Silent%20Injury">silentinjuryofficiel@gmail.com</a>
+            <div class="footer__social" aria-label="Réseaux sociaux du groupe">
+              <a href="https://www.instagram.com/silentinjury_band/" target="_blank" rel="noopener">Instagram</a>
+              <a href="https://www.facebook.com/profile.php?id=61552999371364" target="_blank" rel="noopener">Facebook</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__row">
+      <small>© Silent Injury</small>
+      <div class="footer__social" aria-label="Navigation secondaire">
+        <a href="#release">Release</a>
+        <a href="#tour">Tour</a>
+        <a href="#music">Music</a>
+        <a href="#videos">Videos</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const header = document.getElementById('siteHeader');
+    const menuButton = document.getElementById('menuButton');
+    const menuClose = document.getElementById('menuClose');
+    const menuOverlay = document.getElementById('menuOverlay');
+
+    function syncHeader() {
+      header.classList.toggle('is-scrolled', window.scrollY > 24);
+    }
+
+    function openMenu() {
+      menuOverlay.classList.add('is-open');
+      menuOverlay.setAttribute('aria-hidden', 'false');
+      menuButton.setAttribute('aria-expanded', 'true');
+      document.body.classList.add('menu-open');
+    }
+
+    function closeMenu() {
+      menuOverlay.classList.remove('is-open');
+      menuOverlay.setAttribute('aria-hidden', 'true');
+      menuButton.setAttribute('aria-expanded', 'false');
+      document.body.classList.remove('menu-open');
+    }
+
+    menuButton.addEventListener('click', () => {
+      const isOpen = menuOverlay.classList.contains('is-open');
+      if (isOpen) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    });
+
+    menuClose.addEventListener('click', closeMenu);
+
+    menuOverlay.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', closeMenu);
+    });
+
+    window.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && menuOverlay.classList.contains('is-open')) {
+        closeMenu();
+      }
+    });
+
+    window.addEventListener('scroll', syncHeader, { passive: true });
+    syncHeader();
+
+    const liveFrames = [
+      {
+        el: document.getElementById('live-frame-1'),
+        images: [
+          'assets/gallery/04-silent-injury-live-arthur-delorme-chant-guitare-noir-blanc-portrait.webp',
+          'assets/gallery/07-silent-injury-live-arthur-delorme-chant-guitare-lumiere-rouge.webp',
+          'assets/gallery/10-silent-injury-live-arthur-delorme-chant-cri-profil-lumiere-bleue.webp',
+          'assets/gallery/12-silent-injury-live-arthur-delorme-guitariste-portrait-noir-blanc-ombre.webp',
+          'assets/gallery/13-silent-injury-live-arthur-delorme-guitariste-portrait-noir-blanc-yeux-clos.webp'
+        ],
+        index: 0
+      },
+      {
+        el: document.getElementById('live-frame-2'),
+        images: [
+          'assets/gallery/03-silent-injury-live-charles-rousseau-guitariste-soliste-chemise-carreaux.webp',
+          'assets/gallery/14-silent-injury-live-charles-rousseau-guitariste-soliste-lumiere-bleue.webp',
+          'assets/gallery/16-silent-injury-live-charles-rousseau-vincent-louvel-scene-noir-blanc.webp',
+          'assets/gallery/18-silent-injury-live-arthur-delorme-charles-rousseau-guitares-noir-blanc.webp',
+          'assets/gallery/silent-injury-charles-rousseau-guitariste-soliste-live-concert-noir-blanc-01.webp'
+        ],
+        index: 0
+      },
+      {
+        el: document.getElementById('live-frame-3'),
+        images: [
+          'assets/gallery/01-silent-injury-live-thibault-vermot-bassiste-vincent-louvel-batteur-noir-blanc-scene.webp',
+          'assets/gallery/02-silent-injury-live-thibault-vermot-bassiste-portrait-noir-blanc.webp',
+          'assets/gallery/08-silent-injury-live-thibault-vermot-bassiste-vincent-louvel-batteur-plan-large-noir-blanc.webp',
+          'assets/gallery/11-silent-injury-live-thibault-vermot-bassiste-plongee-lumiere-bleue.webp',
+          'assets/gallery/17-silent-injury-live-thibault-vermot-arthur-delorme-vincent-louvel-noir-blanc.webp'
+        ],
+        index: 0
+      }
+    ];
+
+    function rotateLiveFrame(frame) {
+      if (!frame.el || !frame.images || frame.images.length < 2) return;
+
+      frame.el.classList.add('is-swapping');
+
+      setTimeout(() => {
+        frame.index = (frame.index + 1) % frame.images.length;
+        frame.el.src = frame.images[frame.index];
+        frame.el.classList.remove('is-swapping');
+      }, 180);
+    }
+
+    liveFrames.forEach((frame) => {
+      frame.images.forEach((src) => {
+        const img = new Image();
+        img.src = src;
+      });
+    });
+
+    setInterval(() => rotateLiveFrame(liveFrames[0]), 3000);
+
+    setTimeout(() => {
+      setInterval(() => rotateLiveFrame(liveFrames[1]), 3000);
+    }, 1000);
+
+    setTimeout(() => {
+      setInterval(() => rotateLiveFrame(liveFrames[2]), 3000);
+    }, 2000);
+  </script>
+</body>
+</html>
+
+
+
+
