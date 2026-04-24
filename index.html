@@ -313,10 +313,9 @@
     }
 
     /* === HERO VIDEO CAMPAIGN (Life And Loss) === */
-    body.modal-open{overflow:hidden}
 
     .hero-video{
-      width: min(100%, 1080px);
+      width: min(100%, var(--max));
       margin: 0 auto 1.35rem;
       border-radius: 18px;
       overflow: hidden;
@@ -390,73 +389,6 @@
       width: 16px;
       height: 16px;
       fill: currentColor;
-    }
-
-    .unmute-modal{
-      position: fixed;
-      inset: 0;
-      z-index: 80;
-      display: none;
-      place-items: center;
-      padding: 1.25rem;
-    }
-
-    .unmute-modal.is-open{ display: grid; }
-
-    .unmute-modal::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      background: rgba(0,0,0,.72);
-      backdrop-filter: blur(10px);
-    }
-
-    .unmute-modal__panel{
-      position: relative;
-      width: min(92vw, 760px);
-      border-radius: 18px;
-      overflow: hidden;
-      border: 1px solid rgba(244,242,238,.14);
-      background: rgba(0,0,0,.25);
-      box-shadow: 0 24px 80px rgba(0,0,0,.45);
-    }
-
-    .unmute-modal__frame{
-      width:100%;
-      aspect-ratio: 16 / 9;
-      border:0;
-      display:block;
-      background:#000;
-    }
-
-    .unmute-modal__bar{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap: .85rem;
-      padding: .85rem 1rem;
-      border-top: 1px solid rgba(244,242,238,.10);
-      color: var(--muted);
-      font-size: .78rem;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-    }
-
-    .unmute-close{
-      border: 1px solid rgba(244,242,238,.18);
-      background: transparent;
-      color: rgba(244,242,238,.88);
-      width: 44px;
-      height: 44px;
-      border-radius: 999px;
-      cursor: pointer;
-      font-size: 1rem;
-      transition: transform .18s ease, border-color .18s ease;
-    }
-
-    .unmute-close:hover{
-      transform: translateY(-1px);
-      border-color: rgba(255,172,31,.55);
     }
 
     .menu-button,
@@ -674,7 +606,7 @@
       place-items:center;
     }
 
-    .hero__content{width:min(100%, 780px)}
+    .hero__content{width:min(100%, var(--max))}
 
     .eyebrow{
       margin:0 0 1.1rem;
@@ -1192,7 +1124,7 @@
             <iframe
               id="lifeAndLossEmbed"
               class="hero-video__frame"
-              src="https://www.youtube-nocookie.com/embed/-CAlP8JJYnw?autoplay=1&mute=1&playsinline=1&rel=0&modestbranding=1&controls=1"
+              src="https://www.youtube-nocookie.com/embed/-CAlP8JJYnw?autoplay=1&mute=0&playsinline=1&rel=0&modestbranding=1&controls=1&enablejsapi=1&origin=https%3A%2F%2Fsiofficial.github.io"
               title="Silent Injury — Life And Loss (Official Video)"
               loading="eager"
               referrerpolicy="strict-origin-when-cross-origin"
@@ -1203,11 +1135,11 @@
             <div class="hero-video__titlebar">
               <p class="hero-video__title">Life And Loss</p>
 
-              <button class="hero-unmute" id="unmuteBtn" type="button" aria-haspopup="dialog" aria-controls="unmuteModal">
+              <button class="hero-unmute" id="muteBtn" type="button" aria-pressed="false" aria-label="Couper le son">
                 <svg viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M3 10v4h3l4 4V6L6 10H3Zm13.5 2a4.5 4.5 0 0 0-2.25-3.9v7.8A4.5 4.5 0 0 0 16.5 12Zm-2.25-8.1v2.2A8.5 8.5 0 0 1 19 12a8.5 8.5 0 0 1-4.75 5.9v2.2A10.5 10.5 0 0 0 21 12 10.5 10.5 0 0 0 14.25 3.9Z"/>
                 </svg>
-                UNMUTE
+                MUTE
               </button>
             </div>
           </div>
@@ -1498,23 +1430,6 @@
       </div>
     </div>
   </footer>
-
-  <div class="unmute-modal" id="unmuteModal" role="dialog" aria-modal="true" aria-label="Life And Loss — lecture avec son">
-    <div class="unmute-modal__panel">
-      <iframe
-        id="lifeAndLossUnmuted"
-        class="unmute-modal__frame"
-        title="Silent Injury — Life And Loss (with sound)"
-        loading="lazy"
-        referrerpolicy="strict-origin-when-cross-origin"
-        allow="autoplay; encrypted-media; picture-in-picture; web-share"
-        allowfullscreen>
-      </iframe>
-      <div class="unmute-modal__bar">
-        <span>Life And Loss · with sound</span>
-        <button class="unmute-close" id="unmuteClose" type="button" aria-label="Fermer">✕</button>
-      </div>
-    </div>
   </div>
 
 
@@ -1722,70 +1637,83 @@ END:VCALENDAR`;
     setTimeout(() => { setInterval(() => rotateLiveFrame(liveFrames[1]), 3000); }, 1000);
     setTimeout(() => { setInterval(() => rotateLiveFrame(liveFrames[2]), 3000); }, 2000);
 
-    // Life And Loss video embed (autoplay muted) + explicit UNMUTE modal
-    (function initLifeAndLossEmbeds(){
-      const mutedFrame = document.getElementById("lifeAndLossEmbed");
-      if (!mutedFrame) return;
+    // Life And Loss video embed (attempt autoplay with sound) + MUTE toggle
+    (function initLifeAndLossPlayer(){
+      const frameId = "lifeAndLossEmbed";
+      const btn = document.getElementById("muteBtn");
+      let player = null;
 
-      const mutedSrc =
-        "https://www.youtube-nocookie.com/embed/-CAlP8JJYnw" +
-        "?autoplay=1" +
-        "&mute=1" +
-        "&playsinline=1" +
-        "&rel=0" +
-        "&modestbranding=1" +
-        "&controls=1";
-
-      const setMuted = () => { if (!mutedFrame.getAttribute("src")) mutedFrame.src = mutedSrc; };
-      if (document.readyState === "loading") {
-        document.addEventListener("DOMContentLoaded", setMuted, { once: true });
-      } else {
-        setMuted();
+      function setBtn(isMuted){
+        if (!btn) return;
+        btn.textContent = isMuted ? "UNMUTE" : "MUTE";
+        btn.setAttribute("aria-pressed", String(isMuted));
+        btn.setAttribute("aria-label", isMuted ? "Réactiver le son" : "Couper le son");
       }
 
-      const modal = document.getElementById("unmuteModal");
-      const openBtn = document.getElementById("unmuteBtn");
-      const closeBtn = document.getElementById("unmuteClose");
-      const unmutedFrame = document.getElementById("lifeAndLossUnmuted");
+      function onReadyTryAutoplaySound(target){
+        // On tente le son d'abord. Si le navigateur bloque, on bascule en muet pour garantir l'autoplay.
+        try { target.unMute(); } catch(e){}
+        try { target.playVideo(); } catch(e){}
 
-      const unmutedSrc =
-        "https://www.youtube-nocookie.com/embed/-CAlP8JJYnw" +
-        "?autoplay=1" +
-        "&mute=0" +
-        "&playsinline=1" +
-        "&rel=0" +
-        "&modestbranding=1" +
-        "&controls=1";
+        setTimeout(() => {
+          let state = -1;
+          try { state = target.getPlayerState(); } catch(e){}
 
-      function openModal(){
-        if (!modal) return;
-        modal.classList.add("is-open");
-        document.body.classList.add("modal-open");
-        if (unmutedFrame) unmutedFrame.src = unmutedSrc;
+          // 1 = playing, 3 = buffering
+          const ok = (state === 1 || state === 3);
+
+          if (!ok) {
+            try { target.mute(); } catch(e){}
+            try { target.playVideo(); } catch(e){}
+            setBtn(true);
+          } else {
+            // si ça joue, on se cale sur l'état réel de mute
+            let muted = false;
+            try { muted = target.isMuted(); } catch(e){}
+            setBtn(muted);
+          }
+        }, 700);
       }
 
-      function closeModal(){
-        if (!modal) return;
-        modal.classList.remove("is-open");
-        document.body.classList.remove("modal-open");
-        if (unmutedFrame) unmutedFrame.src = "";
-      }
+      function initYT(){
+        if (!window.YT || !window.YT.Player) return;
 
-      if (openBtn) openBtn.addEventListener("click", openModal);
-      if (closeBtn) closeBtn.addEventListener("click", closeModal);
-
-      if (modal) {
-        modal.addEventListener("click", (e) => {
-          const panel = e.target.closest(".unmute-modal__panel");
-          if (!panel) closeModal();
+        player = new window.YT.Player(frameId, {
+          events: {
+            onReady: (e) => onReadyTryAutoplaySound(e.target)
+          }
         });
+
+        if (btn) {
+          btn.addEventListener("click", () => {
+            if (!player) return;
+            let muted = false;
+            try { muted = player.isMuted(); } catch(e){ muted = false; }
+
+            if (muted) {
+              try { player.unMute(); } catch(e){}
+              setBtn(false);
+            } else {
+              try { player.mute(); } catch(e){}
+              setBtn(true);
+            }
+          });
+        }
       }
 
-      window.addEventListener("keydown", (e) => {
-        if (e.key === "Escape" && modal && modal.classList.contains("is-open")) {
-          closeModal();
-        }
-      });
+      // Charge l'API YouTube si nécessaire (pas d'asset GitHub)
+      if (window.YT && window.YT.Player) {
+        initYT();
+      } else {
+        window.onYouTubeIframeAPIReady = initYT;
+        const s = document.createElement("script");
+        s.src = "https://www.youtube.com/iframe_api";
+        s.async = true;
+        document.head.appendChild(s);
+      }
+
+      // état initial du bouton
+      setBtn(false);
     })();
 
   </script>
