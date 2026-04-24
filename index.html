@@ -312,6 +312,153 @@
       color: rgba(255,172,31,.92);
     }
 
+    /* === HERO VIDEO CAMPAIGN (Life And Loss) === */
+    body.modal-open{overflow:hidden}
+
+    .hero-video{
+      width: min(100%, 1080px);
+      margin: 0 auto 1.35rem;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid rgba(244,242,238,.14);
+      background: rgba(0,0,0,.35);
+      position: relative;
+      box-shadow: 0 18px 60px rgba(0,0,0,.35);
+    }
+
+    .hero-video__frame{
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border: 0;
+      display: block;
+      background: #000;
+    }
+
+    .hero-video__titlebar{
+      position:absolute;
+      inset: auto 0 0 0;
+      padding: .95rem 1rem .9rem;
+      background: linear-gradient(180deg, transparent, rgba(0,0,0,.78));
+      display:flex;
+      align-items:end;
+      justify-content:space-between;
+      gap:.85rem;
+      pointer-events: none;
+    }
+
+    .hero-video__title{
+      margin:0;
+      font-family: var(--font-display);
+      font-weight: 600;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      font-size: clamp(.95rem, 2vw, 1.1rem);
+      color: rgba(244,242,238,.92);
+      text-shadow: 0 0 18px rgba(0,0,0,.5);
+    }
+
+    .hero-unmute{
+      pointer-events: auto;
+      border: 1px solid rgba(244,242,238,.26);
+      background: rgba(0,0,0,.28);
+      color: rgba(244,242,238,.92);
+      min-height: 40px;
+      padding: 0 .95rem;
+      border-radius: 999px;
+      font-weight: 800;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      font-size: .68rem;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:.5rem;
+      cursor:pointer;
+      transition: transform .18s ease, border-color .18s ease, background-color .18s ease, color .18s ease;
+      user-select: none;
+      text-decoration: none;
+    }
+
+    .hero-unmute:hover{
+      transform: translateY(-1px);
+      border-color: rgba(255,172,31,.55);
+      background: rgba(255,172,31,.06);
+      color: rgba(255,172,31,.92);
+    }
+
+    .hero-unmute svg{
+      width: 16px;
+      height: 16px;
+      fill: currentColor;
+    }
+
+    .unmute-modal{
+      position: fixed;
+      inset: 0;
+      z-index: 80;
+      display: none;
+      place-items: center;
+      padding: 1.25rem;
+    }
+
+    .unmute-modal.is-open{ display: grid; }
+
+    .unmute-modal::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background: rgba(0,0,0,.72);
+      backdrop-filter: blur(10px);
+    }
+
+    .unmute-modal__panel{
+      position: relative;
+      width: min(92vw, 760px);
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid rgba(244,242,238,.14);
+      background: rgba(0,0,0,.25);
+      box-shadow: 0 24px 80px rgba(0,0,0,.45);
+    }
+
+    .unmute-modal__frame{
+      width:100%;
+      aspect-ratio: 16 / 9;
+      border:0;
+      display:block;
+      background:#000;
+    }
+
+    .unmute-modal__bar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: .85rem;
+      padding: .85rem 1rem;
+      border-top: 1px solid rgba(244,242,238,.10);
+      color: var(--muted);
+      font-size: .78rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .unmute-close{
+      border: 1px solid rgba(244,242,238,.18);
+      background: transparent;
+      color: rgba(244,242,238,.88);
+      width: 44px;
+      height: 44px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: transform .18s ease, border-color .18s ease;
+    }
+
+    .unmute-close:hover{
+      transform: translateY(-1px);
+      border-color: rgba(255,172,31,.55);
+    }
+
     .menu-button,
     .header-cta{
       border:1px solid var(--line);
@@ -1041,6 +1188,30 @@
         <div class="hero__content">
           <p class="eyebrow">Silent Injury</p>
 
+          <div class="hero-video" aria-label="Clip — Life And Loss">
+            <iframe
+              id="lifeAndLossEmbed"
+              class="hero-video__frame"
+              src="https://www.youtube-nocookie.com/embed/-CAlP8JJYnw?autoplay=1&mute=1&playsinline=1&rel=0&modestbranding=1&controls=1"
+              title="Silent Injury — Life And Loss (Official Video)"
+              loading="eager"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allow="autoplay; encrypted-media; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
+
+            <div class="hero-video__titlebar">
+              <p class="hero-video__title">Life And Loss</p>
+
+              <button class="hero-unmute" id="unmuteBtn" type="button" aria-haspopup="dialog" aria-controls="unmuteModal">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M3 10v4h3l4 4V6L6 10H3Zm13.5 2a4.5 4.5 0 0 0-2.25-3.9v7.8A4.5 4.5 0 0 0 16.5 12Zm-2.25-8.1v2.2A8.5 8.5 0 0 1 19 12a8.5 8.5 0 0 1-4.75 5.9v2.2A10.5 10.5 0 0 0 21 12 10.5 10.5 0 0 0 14.25 3.9Z"/>
+                </svg>
+                UNMUTE
+              </button>
+            </div>
+          </div>
+
           <h1 class="hero__title">Life And Loss</h1>
 
           <p class="hero__announce" id="heroAnnounce">THE NEW SINGLE OUT APRIL 24, 2026</p>
@@ -1328,6 +1499,26 @@
     </div>
   </footer>
 
+  <div class="unmute-modal" id="unmuteModal" role="dialog" aria-modal="true" aria-label="Life And Loss — lecture avec son">
+    <div class="unmute-modal__panel">
+      <iframe
+        id="lifeAndLossUnmuted"
+        class="unmute-modal__frame"
+        title="Silent Injury — Life And Loss (with sound)"
+        loading="lazy"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allow="autoplay; encrypted-media; picture-in-picture; web-share"
+        allowfullscreen>
+      </iframe>
+      <div class="unmute-modal__bar">
+        <span>Life And Loss · with sound</span>
+        <button class="unmute-close" id="unmuteClose" type="button" aria-label="Fermer">✕</button>
+      </div>
+    </div>
+  </div>
+
+
+
   <script>
     const header = document.getElementById('siteHeader');
     const menuButton = document.getElementById('menuButton');
@@ -1530,6 +1721,73 @@ END:VCALENDAR`;
     setInterval(() => rotateLiveFrame(liveFrames[0]), 3000);
     setTimeout(() => { setInterval(() => rotateLiveFrame(liveFrames[1]), 3000); }, 1000);
     setTimeout(() => { setInterval(() => rotateLiveFrame(liveFrames[2]), 3000); }, 2000);
+
+    // Life And Loss video embed (autoplay muted) + explicit UNMUTE modal
+    (function initLifeAndLossEmbeds(){
+      const mutedFrame = document.getElementById("lifeAndLossEmbed");
+      if (!mutedFrame) return;
+
+      const mutedSrc =
+        "https://www.youtube-nocookie.com/embed/-CAlP8JJYnw" +
+        "?autoplay=1" +
+        "&mute=1" +
+        "&playsinline=1" +
+        "&rel=0" +
+        "&modestbranding=1" +
+        "&controls=1";
+
+      const setMuted = () => { if (!mutedFrame.getAttribute("src")) mutedFrame.src = mutedSrc; };
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", setMuted, { once: true });
+      } else {
+        setMuted();
+      }
+
+      const modal = document.getElementById("unmuteModal");
+      const openBtn = document.getElementById("unmuteBtn");
+      const closeBtn = document.getElementById("unmuteClose");
+      const unmutedFrame = document.getElementById("lifeAndLossUnmuted");
+
+      const unmutedSrc =
+        "https://www.youtube-nocookie.com/embed/-CAlP8JJYnw" +
+        "?autoplay=1" +
+        "&mute=0" +
+        "&playsinline=1" +
+        "&rel=0" +
+        "&modestbranding=1" +
+        "&controls=1";
+
+      function openModal(){
+        if (!modal) return;
+        modal.classList.add("is-open");
+        document.body.classList.add("modal-open");
+        if (unmutedFrame) unmutedFrame.src = unmutedSrc;
+      }
+
+      function closeModal(){
+        if (!modal) return;
+        modal.classList.remove("is-open");
+        document.body.classList.remove("modal-open");
+        if (unmutedFrame) unmutedFrame.src = "";
+      }
+
+      if (openBtn) openBtn.addEventListener("click", openModal);
+      if (closeBtn) closeBtn.addEventListener("click", closeModal);
+
+      if (modal) {
+        modal.addEventListener("click", (e) => {
+          const panel = e.target.closest(".unmute-modal__panel");
+          if (!panel) closeModal();
+        });
+      }
+
+      window.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && modal && modal.classList.contains("is-open")) {
+          closeModal();
+        }
+      });
+    })();
+
   </script>
 </body>
 </html>
